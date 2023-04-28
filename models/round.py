@@ -1,9 +1,10 @@
 class Round:
-    def __init__(self, name, start_date, end_date=None):
+    def __init__(self, name, start_date, closed=False, end_date=None):
         self.name = name
         self.start_date = start_date
         self.end_date = end_date
         self.games = []
+        self.closed = closed
 
     def add_games(self, games):
         self.games = games

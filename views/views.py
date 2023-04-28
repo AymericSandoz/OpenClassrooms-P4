@@ -77,18 +77,21 @@ class View:
         return {"first_name": first_name, "last_name": last_name, "id":id, "date_of_birth": date_of_birth}
 
     @staticmethod
-    def input_scores(games, round_number):
+    def show_games(games, round_number):
         print(f"Hello, here are the games for round n{round_number} :")
         print("One you have entered all the scores next round will be launched :")
         i = 0
         for game in games:
-            print(f"ID {i} :  {games[i].player_a.first_name} {games[i].player_a.last_name} VS {games[i].player_b.first_name} {games[i].player_b.last_name}")
+            print(f"ID {i} :  {game.player_a['first_name']} {game.player_a['last_name']} VS {game.player_b['first_name']} {game.player_b['last_name']}")
             i = i + 1
-        game_id = input("now choose a game (enter the id of the game):")
-        print(f"now enter the winner : A, B or as draw {game_id}")
 
     @staticmethod
-    def display_game(game):
-        print(f"ID {i} :  {game.player_a.first_name} {game.player_a.last_name} VS {game.player_b.first_name} {game.player_b.last_name}")
-        
+    def input_result(games):
+        game_id = int(input("now choose a game (enter the id of the game) \nAlso if you want to close the round enter close (all score must be added before):"))
+        game = games[game_id]
+        print(f"ID {game_id} :  {game.player_a['first_name']} {game.player_a['last_name']} VS {game.player_b['first_name']} {game.player_b['last_name']}")
+        score = input(f"now enter the winner : A, B or D as draw")
+        return score
+
+       
 

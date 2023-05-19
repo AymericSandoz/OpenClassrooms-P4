@@ -87,11 +87,15 @@ class View:
 
     @staticmethod
     def input_result(games):
-        game_id = int(input("now choose a game (enter the id of the game) \nAlso if you want to close the round enter close (all score must be added before):"))
+        result_input = input("now choose a game (enter the id of the game) \nAlso if you want to close the round enter close (all score must be added before):")
+        if result_input == "closed":
+            return "closed"
+        
+        game_id = int(result_input)  
         game = games[game_id]
         print(f"ID {game_id} :  {game.player_a['first_name']} {game.player_a['last_name']} VS {game.player_b['first_name']} {game.player_b['last_name']}")
-        score = input(f"now enter the winner : A, B or D as draw")
-        return score
+        winner = input(f"now enter the winner : A, B or D as draw")
+        return {"winner" : winner, "game_id" : game_id}
 
        
 

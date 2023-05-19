@@ -21,5 +21,10 @@ Dans views.py à quoi sert self par exemple ? A rien on est d'accord ? A quoi se
 
 ctr Y contraire de crt Z
 
+il faut que je configure flake
+Il ne faut pas que qu'il y ai de views dans les models. J'ai pas eu le temps de m'en occuper
 
-il faut que je configure flake 
+19/05
+Trois remarques principales :
+Je ne met pas correctement à jour mon instance de modèle tournament
+Il ne faut pas que qu'il y ai de views dans les models. J'ai pas eu le temps de m'en occuper

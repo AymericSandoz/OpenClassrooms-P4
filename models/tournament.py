@@ -7,6 +7,7 @@ from views.views import View
 
 class Tournament:
     def __init__(self, name, location, start_date, end_date, players=[], rounds=[], nb_rounds=4,current_round=1, description="tournoi d'échec",played_games=[]):
+        self.id = random.randint(1000000, 9999999)
         self.name = name
         self.location = location
         self.start_date = start_date
@@ -40,7 +41,9 @@ class Tournament:
     def open_tournament(self):
         with open("data/tournaments.json", "r") as f:
             data = json.load(f)
+            id = random.randint(1000000, 9999999) 
             tournament_data = {
+                "id": self.id, 
                 "name": self.name,
                 "start date": self.start_date.strftime('%Y-%m-%d'),
                 "location": self.location,
@@ -66,19 +69,18 @@ class Tournament:
             round = Round(f"{len(self.rounds) + 1}", start_date) #Round("Round {}".format(len(self.rounds) + 1), start_date)
             self.rounds.append(round)
             games = self.pair_players()
-            round.add_games(games)
+            round.add_games(games, self.id)
             return round
     
     def close_round(self, round, round_number):
-        print("round :", round)
-        View.show_games(round.games, round_number)
         while not round.closed:
+            View.show_games(round.games, round_number)
             result = View.input_result(round.games)
             if result == "closed":
-                #il faut rajoute une fonction qui analyse si tous les scores ont bien été rentrés
-                round.closed = True
+                round.close_round(self.id) 
             else:
-                Game.attribute_score(result) 
+                score = Game.attribute_score(result["winner"])
+                Game.close_game(score, result["game_id"],  self.id) 
 
         
     
@@ -96,10 +98,15 @@ class Tournament:
             for i in range(0, len(self.players), 2):
                 player1 = self.players[i]
                 player2 = self.players[i+1]
-                ##je sais pas comment faire en sorte d'utiliser une Classe Game la dessus 
                 games.append(Game(player1, player2)) #la je rentre des scores égale à 0 il faut que je comprenne quand et comment les modifier
         
         else:
             print(f"round {len(self.rounds)}")  # La ou il audras trier en fonction du score
         return games
+    
+    def actualise_players_score(self):
+        test = 1
+        print("players :",self.players)
+        print("rounds :",self.rounds)
+        
     

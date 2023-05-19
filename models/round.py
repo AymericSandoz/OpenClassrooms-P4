@@ -1,3 +1,6 @@
+import json
+
+
 class Round:
     def __init__(self, name, start_date, closed=False, end_date=None):
         self.name = name
@@ -6,12 +9,38 @@ class Round:
         self.games = []
         self.closed = closed
 
-    def add_games(self, games):
-        self.games = games
-    
-    def close_game(self, player1, score1, player2, score2):
-        game = ([player1, score1], [player2, score2])
-        self.games.append(game)
+    def add_games(self, games, tournamentId):
+        print("games",games)
+        self.games =  games
+        with open('data/tournaments.json') as file:
+            data = json.load(file)
 
-    def close_round(self, end_date):
-        self.end_date = end_date  #ou self.end_date = datetime.now().strftime("%Y-%m-%d %H:%M:%S") ? 
+        tournament = next((t for t in data['tournaments'] if t['id'] == tournamentId), None)
+        if tournament:
+            tournament['games'] = [game.to_dict() for game in games]
+            for t in data['tournaments']:
+                if t['id'] == tournamentId:
+                    t = tournament
+                    break
+            with open('data/tournaments.json', 'w') as file:
+                json.dump(data, file, indent=4)
+
+    def close_round(self, tournamentId):
+        self.end_date = "23/10/1996"  #ou self.end_date = datetime.now().strftime("%Y-%m-%d %H:%M:%S") ? 
+        self.closed = True
+        with open('data/tournaments.json') as file:
+            data = json.load(file)
+
+        for tournament in data['tournaments']:
+            if tournament['id'] == tournamentId:
+                target_tournament = tournament
+                break
+
+        games = target_tournament['games']
+        for game in games:
+            for player in game:
+                if player['score'] is None:
+                    self.closed = False
+                    break
+
+

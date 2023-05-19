@@ -7,6 +7,7 @@ class Player:
         self.last_name = last_name
         self.id = id
         self.date_of_birth = date_of_birth
+        self.score = None
     
     def register_player(self): #note : pour cette fonction il faudrait vérifier que l'id rentré correspond au format désiré : 11XXXXX
         """register to the Federation"""

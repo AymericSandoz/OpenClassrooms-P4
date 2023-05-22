@@ -6,7 +6,7 @@ from views.views import View
 
 
 class Tournament:
-    def __init__(self, name, location, start_date, end_date, players=[], rounds=[], nb_rounds=4,current_round=1, description="tournoi d'échec",played_games=[]):
+    def __init__(self, name, location, start_date, end_date, players=[], rounds=[], nb_rounds=4, description="tournoi d'échec",played_games=[]):
         self.id = random.randint(1000000, 9999999)
         self.name = name
         self.location = location
@@ -16,7 +16,6 @@ class Tournament:
         self.rounds = rounds
         self.nb_rounds = nb_rounds
         self.description = description
-        self.current_round = current_round
         self.played_games = played_games
         self.open_tournament()
 
@@ -69,7 +68,7 @@ class Tournament:
             round = Round(f"{len(self.rounds) + 1}", start_date) #Round("Round {}".format(len(self.rounds) + 1), start_date)
             self.rounds.append(round)
             games = self.pair_players()
-            round.add_games(games, self.id)
+            round.add_games(games, self.id, len(self.rounds))
             return round
     
     def close_round(self, round, round_number):
@@ -77,10 +76,10 @@ class Tournament:
             View.show_games(round.games, round_number)
             result = View.input_result(round.games)
             if result == "closed":
-                round.close_round(self.id) 
+                round.close_round(self.id, round_number) 
             else:
                 score = Game.attribute_score(result["winner"])
-                Game.close_game(score, result["game_id"],  self.id) 
+                Game.close_game(score, result["game_id"],  self.id, round_number) 
 
         
     
@@ -98,15 +97,56 @@ class Tournament:
             for i in range(0, len(self.players), 2):
                 player1 = self.players[i]
                 player2 = self.players[i+1]
-                games.append(Game(player1, player2)) #la je rentre des scores égale à 0 il faut que je comprenne quand et comment les modifier
+                games.append(Game(player1, player2))
         
         else:
-            print(f"round {len(self.rounds)}")  # La ou il audras trier en fonction du score
+            sorted_players = sorted(self.players, key=lambda player: player["score"], reverse=True)
+            for i in range(0, len(self.players), 2):
+                player1 = sorted_players[i]
+                player2 = sorted_players[i+1]
+                games.append(Game(player1, player2))
         return games
     
-    def actualise_players_score(self):
-        test = 1
-        print("players :",self.players)
-        print("rounds :",self.rounds)
+    def get_winner(self):
+        sorted_players = sorted(self.players, key=lambda player: player["score"], reverse=True)
+        winners = [player for player in self.players if player['score'] == sorted_players[0]['score']]
+        return winners
+
+
+
+    
+    def actualise_players_score(self, round_number):
+        with open('data/tournaments.json') as file:
+            data = json.load(file)
+
+        for tournament in data['tournaments']:
+            if tournament['id'] == self.id:
+                target_tournament = tournament
+                break
+
+        round = target_tournament['rounds'][round_number]
+        for game in round["games"]:
+            player1 = game[0]["player1"]
+            player2 = game[1]["player2"]
+
+            score1 = game[0]["score"]
+            score2 = game[1]["score"]
+
+            for player in target_tournament["players"]:
+                if player["id"] == player1["id"]:
+                    player["score"] = player.get("score", 0) + score1
+                elif player["id"] == player2["id"]:
+                    player["score"] = player.get("score", 0) + score2
+            
+            for player in self.players:
+                print(player)
+                if player["id"] == player1["id"]:
+                    player["score"] = player.get("score", 0) + score1
+                elif player["id"] == player2["id"]:
+                    player["score"] = player.get("score", 0) + score2
+        
+        with open("data/tournaments.json", "w") as json_file:
+            json.dump(data, json_file)
+
         
     

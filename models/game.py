@@ -30,7 +30,7 @@ class Game:
         return score
     
     @staticmethod
-    def close_game(score, gameId, tournamentId):
+    def close_game(score, gameId, tournamentId, round_number):
         with open('data/tournaments.json') as file:
             data = json.load(file)
 
@@ -39,14 +39,14 @@ class Game:
                 target_tournament = tournament
                 break
 
-        game = target_tournament['games'][gameId]
+        rounds = target_tournament['rounds'][round_number]
 
-        print("test : ", game)
+        game = rounds['games'][gameId]
 
         player1 = game[0]['player1']
         player2 = game[1]['player2']
 
-        target_tournament['games'][gameId] = [{'player1': player1, 'score': score["score_a"]}, {'player2': player2, 'score': score["score_b"]}]
+        rounds['games'][gameId] = [{'player1': player1, 'score': score["score_a"]}, {'player2': player2, 'score': score["score_b"]}]
 
         with open('data/tournaments.json', 'w') as file:
             json.dump(data, file, indent=4)

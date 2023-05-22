@@ -12,7 +12,7 @@ def main():
     if start_tournament_or_register_player == "2":
         Controller.register_player()
     elif start_tournament_or_register_player == "1":
-        Controller.start_tournament()
+        Controller.launch_tournament()
     else:
         View.invalid_answer()
     

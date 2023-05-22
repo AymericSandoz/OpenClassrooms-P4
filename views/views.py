@@ -96,6 +96,18 @@ class View:
         print(f"ID {game_id} :  {game.player_a['first_name']} {game.player_a['last_name']} VS {game.player_b['first_name']} {game.player_b['last_name']}")
         winner = input(f"now enter the winner : A, B or D as draw")
         return {"winner" : winner, "game_id" : game_id}
+    
+    @staticmethod
+    def close_tournament(tournament_winners):
+        print('Thanks, the tournament is over')
+
+        if len(tournament_winners) == 1:
+            print(f"Congratulation to {tournament_winners['first_name']} {tournament_winners['last_name']} who won the tournament with a score of {tournament_winners['score']}")
+        else:
+            print("Congratulation to")
+            for player in tournament_winners:
+                print(f"Joueur : {player['first_name']} {player['last_name']},")
+                print(f"who won the tournament with a score of {tournament_winners['score']}")
 
        
 

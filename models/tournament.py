@@ -81,13 +81,14 @@ class Tournament:
                 score = Game.attribute_score(result["winner"])
                 Game.close_game(score, result["game_id"],  self.id, round_number) 
 
-        
-    
-    def check_if_game_already_played(self, player1, player2):
-        for game in self.played_games:
-            if player1 in game and player2 in game:
-                return True
-        return False
+    def check_if_game_already_occurred(self, player1, player2):
+        for round in self.rounds:
+            for game in round.games:
+                if ((game.player_a["id"] == player1["id"] or game.player_a["id"] == player2["id"]) and (game.player_b["id"] == player1["id"] or game.player_b["id"] == player2["id"])):
+                    print("La confrontation a déja eu lieu")
+                    return True
+                else: 
+                    return False
 
     def pair_players(self):
         """return list of games"""
@@ -104,8 +105,18 @@ class Tournament:
             for i in range(0, len(self.players), 2):
                 player1 = sorted_players[i]
                 player2 = sorted_players[i+1]
-                games.append(Game(player1, player2))
+                if not self.check_if_game_already_occurred(player1, player2):
+                    games.append(Game(player1, player2))
+                else:
+                    for j in len(self.players)-i:
+                        player1 = sorted_players[i]
+                        player2 = sorted_players[i+1+j]
+                        if not self.check_if_game_already_occurred(player1, player2):
+                            games.append(Game(player1, player2))
+                            sorted_players[i+1], sorted_players[i+1+j] = sorted_players[i+1+j], sorted_players[i+1]
+
         return games
+    
     
     def get_winner(self):
         sorted_players = sorted(self.players, key=lambda player: player["score"], reverse=True)
@@ -139,7 +150,6 @@ class Tournament:
                     player["score"] = player.get("score", 0) + score2
             
             for player in self.players:
-                print(player)
                 if player["id"] == player1["id"]:
                     player["score"] = player.get("score", 0) + score1
                 elif player["id"] == player2["id"]:

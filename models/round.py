@@ -21,9 +21,9 @@ class Round:
             #tournament['games'] = [game.to_dict() for game in games]
             print("round_number",round_number)
             if round_number == 1:
-                tournament['rounds'] = [{"start_date" : self.start_date,"end_date" : self.end_date,"games" : [game.to_dict() for game in games], "closed" : False}]
+                tournament['rounds'] = [{"start_date" : self.start_date,"end_date" : self.end_date,"games" : [game.to_dict() for game in games], "round_number" : round_number, "closed" : False}]
             else:
-                tournament['rounds'].append({"start_date" : self.start_date,"end_date" : self.end_date,"games" : [game.to_dict() for game in games], "closed" : False})
+                tournament['rounds'].append({"start_date" : self.start_date,"end_date" : self.end_date,"games" : [game.to_dict() for game in games], "round_number" : round_number, "closed" : False})
             for t in data['tournaments']:
                 if t['id'] == tournamentId:
                     t = tournament
@@ -31,7 +31,7 @@ class Round:
             with open('data/tournaments.json', 'w') as file:
                 json.dump(data, file, indent=4)
 
-    def close_round(self, tournamentId,round_number):
+    def close_round(self, tournamentId, round_number):
         self.end_date = "23/10/1996"  #ou self.end_date = datetime.now().strftime("%Y-%m-%d %H:%M:%S") ? 
         self.closed = True
         with open('data/tournaments.json') as file:

@@ -9,7 +9,6 @@ class Game:
     
     @staticmethod
     def attribute_score(result):
-        print("result : ", result)
         if result == "A":
             score_a = 1
             score_b = 0
@@ -26,7 +25,6 @@ class Game:
             return "error : wrong result. Must be A, B or D"
         
         score = {"score_a": score_a, "score_b": score_b}
-        print("score :", score)
         return score
     
     @staticmethod

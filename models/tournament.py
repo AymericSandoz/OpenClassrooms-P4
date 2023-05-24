@@ -85,7 +85,7 @@ class Tournament:
         for round in self.rounds:
             for game in round.games:
                 if ((game.player_a["id"] == player1["id"] or game.player_a["id"] == player2["id"]) and (game.player_b["id"] == player1["id"] or game.player_b["id"] == player2["id"])):
-                    print("La confrontation a déja eu lieu")
+                    print("TEST - La confrontation a déja eu lieu")
                     return True
                 else: 
                     return False

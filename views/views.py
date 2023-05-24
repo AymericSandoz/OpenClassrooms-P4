@@ -25,47 +25,63 @@ class View:
     
     @staticmethod
     def get_tournament_start_date():
-        start_date = datetime.datetime.strptime(input("When does it start ? (in DD/MM/YYYY)"),"%d/%m/%Y").date()
-        return start_date
+        while True:
+            try: 
+                start_date = datetime.datetime.strptime(input("When does it start ? (in DD/MM/YYYY)"),"%d/%m/%Y").date()
+                return start_date
+            except:
+                print("Invalid answer")
+                continue
+        
     
     @staticmethod
     def get_tournament_end_date(start_date):
-        while True: 
-            end_date = datetime.datetime.strptime(input("And when does it finish (in DD/MM/YYYY)? "),"%d/%m/%Y").date()
-            if (end_date >= start_date):
-                print("perfect !")
-                return start_date
-            else:
-                print("The end date has to be after the start date !")
+        while True:
+            try:
+                end_date = datetime.datetime.strptime(input("And when does it finish (in DD/MM/YYYY)? "),"%d/%m/%Y").date()
+                if (end_date >= start_date):
+                    print("perfect !")
+                    return start_date
+                else:
+                    print("The end date has to be after the start date !")
+            except:
+                print("Invalid answer")
+                continue
 
     @staticmethod
     def get_players(players_ids):
         "register player to tournament"
         print("It's now time to register players")
-        reponse = input("Do you want to add manually players (1) or choose a list of preregistrered players (2)")  
-        players = []
-        if reponse == "1":
-            while True:
-                id = input("Please enter player's id. (or enter 'q' to stop) : ")
-                if id == "q":
-                    break
-                elif id in players:
-                    print(f"{id} has already been added.")
-                elif id not in players_ids:
-                    print(f"{id} not registered in our list of player.")
-                else:
-                    players.append((id))
-        elif reponse == "2":
-            players.extend(["YR27653", "YR34681", "DT91027", "TF52376", "CT83941", "KX57234", "LE65874", "ZD22348"])#permet d'ajouter les éléments directement dans la liste [] au lieu de les impriquer
-        else:
-            print("Réponse invalide.")
-        
-        return players
+        while True:
+            reponse = input("Do you want to add manually players (1) or choose a list of preregistrered players (2)")  
+            players = []
+            if reponse == "1":
+                while True:
+                    id = input("Please enter player's id. (or enter 'q' to stop) : ")
+                    if id == "q":
+                        break
+                    elif id in players:
+                        print(f"{id} has already been added.")
+                    elif id not in players_ids:
+                        print(f"{id} not registered in our list of player.")
+                    else:
+                        players.append((id))
+            elif reponse == "2":
+                players.extend(["YR27653", "YR34681", "DT91027", "TF52376", "CT83941", "KX57234", "LE65874", "ZD22348"])#permet d'ajouter les éléments directement dans la liste [] au lieu de les impriquer
+            else:
+                print("Invalid answer")
+                continue
+            
+            return players
 
     @staticmethod
     def start_tournament_or_register_player():
-        response = input("Do you want to start a tournament (1) or register players (2)") 
-        return response 
+        while True:
+            response = input("Do you want to start a tournament (1) or register players (2)") 
+            if response not in ["1", "2"]:
+                print("Invalid answer")
+                continue
+            return response 
     
     @staticmethod
     def register_player():
@@ -87,15 +103,29 @@ class View:
 
     @staticmethod
     def input_result(games):
-        result_input = input("now choose a game (enter the id of the game) \nAlso if you want to close the round enter close (all score must be added before):")
-        if result_input == "closed":
-            return "closed"
+        while True:
+            result_input = input("Choisissez un jeu (entrez l'ID du jeu). Si vous souhaitez clôturer la manche, saisissez 'closed' (tous les scores doivent être ajoutés avant) : ")
+            
+            if result_input == "closed":
+                return "closed"
+    
+            try: 
+                if int(result_input) in list(range(len(games)-1)):
+                    game_id = int(result_input)
+                    game = games[game_id]
+                    print(f"ID {game_id}: {game.player_a['first_name']} {game.player_a['last_name']} VS {game.player_b['first_name']} {game.player_b['last_name']}")
+                    winner = input("Maintenant, saisissez le gagnant : A, B ou D pour un match nul : ")
+                    if winner not in ["A", "B", "D"]:
+                        print("Entrée invalides, vous devez saisir A,B ou D")
+                        continue
+                    return {"winner": winner, "game_id": game_id}
         
-        game_id = int(result_input)  
-        game = games[game_id]
-        print(f"ID {game_id} :  {game.player_a['first_name']} {game.player_a['last_name']} VS {game.player_b['first_name']} {game.player_b['last_name']}")
-        winner = input(f"now enter the winner : A, B or D as draw")
-        return {"winner" : winner, "game_id" : game_id}
+                else:
+                    print("Entrée invalide. Veuillez saisir 'closed' pour clôturer la manche ou un nombre valide.")
+                    continue
+            except:
+                print("Entrée invalide. Veuillez saisir 'closed' pour clôturer la manche ou un nombre valide.")
+                continue
     
     @staticmethod
     def close_tournament(tournament_winners):
@@ -109,6 +139,19 @@ class View:
             for player in tournament_winners:
                 print(f"{player['first_name']} {player['last_name']},")
             print(f"who won the tournament with a score of {player['score']}")
+    
+    @staticmethod
+    def id_already_existing(id):
+        print(f"L'id {id} existe déjà.")
+
+    @staticmethod
+    def register_player_to_fd_success_message(first_name):
+        print(f"Le joueur {first_name} a été ajouté avec succès.")
+
+    @staticmethod
+    def no_player_found(id):
+        print(f"Aucun joueur avec l'ID {id} n'a été trouvé.")
+
 
        
 

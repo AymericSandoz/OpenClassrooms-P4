@@ -1,4 +1,5 @@
 import json
+from views.views import View
 
 
 class Player:
@@ -15,17 +16,15 @@ class Player:
             players = json.load(f)["players"] #prend un fichier jsone t créer une version python de l'objet
             ids = [p["id"] for p in players]
             if self.id in ids:
-                print(f"L'id {self.id} existe déjà.")
+                View.id_already_existing(self.id)
                 return
             
         players.append(vars(self))
-        print(players)
 
         with open("data/players.json", 'w') as f:
             jsonObject = {"players": players}
-            print(jsonObject)
             json.dump(jsonObject, f) #prend un fichier python et créer une version json de cet objet 
-            print(f"Le joueur {self.first_name} a été ajouté avec succès.")
+            View.register_player_to_fd_success_message(self.first_name)
     
     def get_player_info(self, player_id):
         """Get player's info by ID"""
@@ -34,5 +33,5 @@ class Player:
             for player in players:
                 if player["id"] == player_id:
                     return player
-            print(f"Aucun joueur avec l'ID {player_id} n'a été trouvé.")
+            View.no_player_found(player_id)
             return None

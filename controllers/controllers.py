@@ -28,7 +28,6 @@ class Controller:
             round = tournament.create_round("30/10/2020") #attention ensuite il faut que les dates se remplisse automatiquement mais pas bien compris comment ? Est ce qu'il faut que la date du jour soit uatomatiquement utilisée comme start_date 
             tournament.close_round(round, i)
             tournament.actualise_players_score(i)
-            print("players",tournament.players)
         
         tournament_winners = tournament.get_winner()
         View.close_tournament(tournament_winners)
@@ -38,7 +37,6 @@ class Controller:
     @staticmethod
     def register_player():
         player_info = View.register_player()
-        print(player_info)
         player = Player(player_info["first_name"], player_info["last_name"], player_info["id"], player_info["date_of_birth"])
         player.register_player()
 

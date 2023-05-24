@@ -10,7 +10,6 @@ class Round:
         self.closed = closed
 
     def add_games(self, games, tournamentId, round_number):
-        print("games",games)
         self.games =  games
         with open('data/tournaments.json') as file:
             data = json.load(file)
@@ -19,7 +18,6 @@ class Round:
         #next() est une fonction qui retourne le prochain élément d'un itérable qui répond à une condition donnée. Dans ce cas, il retourne le premier tournoi qui correspond à la condition t['id'] == tournamentId.
         if tournament:
             #tournament['games'] = [game.to_dict() for game in games]
-            print("round_number",round_number)
             if round_number == 1:
                 tournament['rounds'] = [{"start_date" : self.start_date,"end_date" : self.end_date,"games" : [game.to_dict() for game in games], "round_number" : round_number, "closed" : False}]
             else:

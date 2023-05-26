@@ -28,3 +28,10 @@ Il ne faut pas que qu'il y ai de views dans les models. J'ai pas eu le temps de 
 Trois remarques principales :
 Je ne met pas correctement à jour mon instance de modèle tournament
 Il ne faut pas que qu'il y ai de views dans les models. J'ai pas eu le temps de m'en occuper
+
+26/05
+FOnction pour apparier les joeurs pour les rounds > 1, je ne sais pas comment la faire 
+J'ai enlever toutes le views des models 
+Est-ce que ma gestion des erreurs dans les inputs(while True, try except est bonne ou pas ?)
+Je voudrais qu'on parcours les parcours les views et les modèles ensemble pour me dire ce qui doit être dans les controllers, car ce n'est pas clair pour moi. 
+

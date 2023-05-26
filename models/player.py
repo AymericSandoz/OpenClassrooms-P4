@@ -16,22 +16,22 @@ class Player:
             players = json.load(f)["players"] #prend un fichier jsone t créer une version python de l'objet
             ids = [p["id"] for p in players]
             if self.id in ids:
-                View.id_already_existing(self.id)
-                return
+                return "error"
             
         players.append(vars(self))
 
         with open("data/players.json", 'w') as f:
             jsonObject = {"players": players}
-            json.dump(jsonObject, f) #prend un fichier python et créer une version json de cet objet 
-            View.register_player_to_fd_success_message(self.first_name)
+            json.dump(jsonObject, f) #prend un fichier python et créer une version json de cet objet
+            return "success" 
+            
     
-    def get_player_info(self, player_id):
-        """Get player's info by ID"""
-        with open("data/players.json", 'r') as f:
-            players = json.load(f)["players"]
-            for player in players:
-                if player["id"] == player_id:
-                    return player
-            View.no_player_found(player_id)
-            return None
+    # def get_player_info(self, player_id):
+    #     """Get player's info by ID"""
+    #     with open("data/players.json", 'r') as f:
+    #         players = json.load(f)["players"]
+    #         for player in players:
+    #             if player["id"] == player_id:
+    #                 return player
+    #         View.no_player_found(player_id)
+    #         return None

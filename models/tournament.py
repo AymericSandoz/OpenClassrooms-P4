@@ -71,15 +71,22 @@ class Tournament:
             round.add_games(games, self.id, len(self.rounds))
             return round
     
-    def close_round(self, round, round_number):
-        while not round.closed:
-            View.show_games(round.games, round_number)
-            result = View.input_result(round.games)
-            if result == "closed":
-                round.close_round(self.id, round_number) 
-            else:
-                score = Game.attribute_score(result["winner"])
-                Game.close_game(score, result["game_id"],  self.id, round_number) 
+    # def close_round(self, round, round_number):
+    #     while not round.closed:
+    #         View.show_games(round.games, round_number)
+    #         result = View.input_result(round.games)
+    #         if result == "closed":
+    #             round.close_round(self.id, round_number) 
+    #         else:
+    #             score = Game.attribute_score(result["winner"])
+    #             Game.close_game(score, result["game_id"],  self.id, round_number) 
+
+    def close_round(self, round, round_number, result):
+        if result == "closed":
+            round.close_round(self.id, round_number) 
+        else:
+            score = Game.attribute_score(result["winner"])
+            Game.close_game(score, result["game_id"],  self.id, round_number) 
 
     def check_if_game_already_occurred(self, player1, player2):
         for round in self.rounds:
@@ -108,12 +115,14 @@ class Tournament:
                 if not self.check_if_game_already_occurred(player1, player2):
                     games.append(Game(player1, player2))
                 else:
+                    print("TEST - pair players")
                     for j in len(self.players)-i:
                         player1 = sorted_players[i]
                         player2 = sorted_players[i+1+j]
                         if not self.check_if_game_already_occurred(player1, player2):
                             games.append(Game(player1, player2))
                             sorted_players[i+1], sorted_players[i+1+j] = sorted_players[i+1+j], sorted_players[i+1]
+                            break
 
         return games
     

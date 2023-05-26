@@ -26,7 +26,10 @@ class Controller:
         tournament.add_players(players)
         for i in range(tournament.nb_rounds):
             round = tournament.create_round("30/10/2020") #attention ensuite il faut que les dates se remplisse automatiquement mais pas bien compris comment ? Est ce qu'il faut que la date du jour soit uatomatiquement utilisée comme start_date 
-            tournament.close_round(round, i)
+            while not round.closed:
+                View.show_games(round.games, i)
+                result = View.input_result(round.games)
+                tournament.close_round(round, i, result)
             tournament.actualise_players_score(i)
         
         tournament_winners = tournament.get_winner()
@@ -38,7 +41,12 @@ class Controller:
     def register_player():
         player_info = View.register_player()
         player = Player(player_info["first_name"], player_info["last_name"], player_info["id"], player_info["date_of_birth"])
-        player.register_player()
+        success_message = player.register_player()
+        if success_message == "echec":
+            View.id_already_existing(player.id)
+        else:
+            View.register_player_to_fd_success_message(player.id)
+
 
 
 

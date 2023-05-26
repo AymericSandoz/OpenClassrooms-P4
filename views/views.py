@@ -90,12 +90,12 @@ class View:
         last_name = input("enter last name :")
         id = input("enter id :")
         date_of_birth = input("enter date of birth ")
-        return {"first_name": first_name, "last_name": last_name, "id":id, "date_of_birth": date_of_birth}
+        return {"first_name": first_name, "last_name": last_name, "id": id, "date_of_birth": date_of_birth}
 
     @staticmethod
     def show_games(games, round_number):
         print(f"Hello, here are the games for round n{round_number} :")
-        print("One you have entered all the scores next round will be launched :")
+        print("One you have entered all the scores next round will be launched : ")
         i = 0
         for game in games:
             print(f"ID {i} :  {game.player_a['first_name']} {game.player_a['last_name']} VS {game.player_b['first_name']} {game.player_b['last_name']}")
@@ -110,7 +110,7 @@ class View:
                 return "closed"
     
             try: 
-                if int(result_input) in list(range(len(games)-1)):
+                if int(result_input) in list(range(len(games))):
                     game_id = int(result_input)
                     game = games[game_id]
                     print(f"ID {game_id}: {game.player_a['first_name']} {game.player_a['last_name']} VS {game.player_b['first_name']} {game.player_b['last_name']}")

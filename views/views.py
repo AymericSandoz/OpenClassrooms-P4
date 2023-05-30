@@ -76,10 +76,10 @@ class View:
             return players
 
     @staticmethod
-    def start_tournament_or_register_player():
+    def menu():
         while True:
-            response = input("Do you want to start a tournament (1) or register players (2)") 
-            if response not in ["1", "2"]:
+            response = input("Do you want to start a tournament (1), register players (2), or look at older tournament (3) ? ") 
+            if response not in ["1", "2", "3"]:
                 print("Invalid answer")
                 continue
             return response 
@@ -152,6 +152,47 @@ class View:
     @staticmethod
     def no_player_found(id):
         print(f"Aucun joueur avec l'ID {id} n'a été trouvé.")
+    
+    @staticmethod
+    def display_tournaments(tournament_id, tournament_name, start_date, end_date, winners):
+        print("Tournament ID:", tournament_id)
+        print("Name:", tournament_name)
+        print("Start Date:", start_date)
+        print("End Date:", end_date)
+        print("Winners:", winners)
+        print("---------------------")
+    
+    @staticmethod
+    def get_tournament_id(tournaments):
+        while True:
+            input_ID = input("Please if your want more information on a tournament, enter it's ID:")
+            if input_ID == "menu" or input_ID == "Menu":
+                return "menu"
+            for tournament in tournaments:
+                if tournament["id"] == int(input_ID):
+                    return tournament["id"]
+            print("Sorry there is no tournament with this ID")
+            continue
+                
+
+    @staticmethod
+    def display_tournament(tournament):
+        print("Tournament Name:", tournament["name"])
+        print("Start Date:", tournament["start date"])
+        print("Location:", tournament["location"])
+        print("Description:", tournament["description"])
+        print("Players:")
+        for player in tournament["players"]:
+            print(player["first_name"], player["last_name"], "ID:", player["id"])
+        print("Rounds:")
+        for round in tournament["rounds"]:
+            print("Round", round["round_number"])
+            for game in round["games"]:
+                player1 = game[0]["player1"]
+                player2 = game[1]["player2"]
+                print(player1["first_name"], player1["last_name"], "vs", player2["first_name"], player2["last_name"])
+                print("Score:", game[0]["score"], "-", game[1]["score"])
+        
 
 
        

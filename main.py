@@ -7,16 +7,16 @@ from views.views import View
 
 
 def main():
-    start_tournament_or_register_player = View.start_tournament_or_register_player()
+    menu_choice = View.menu()
 
-    if start_tournament_or_register_player == "2":
+    if menu_choice == "2":
         Controller.register_player()
-    elif start_tournament_or_register_player == "1":
+    elif menu_choice == "1":
         Controller.launch_tournament()
-    else:
-        View.invalid_answer()
+    elif menu_choice == "3":
+        Controller.display_tournaments()
+        Controller.display_tournament()
     
-
 if __name__ == "__main__":
     main()
 

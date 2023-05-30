@@ -35,3 +35,5 @@ J'ai enlever toutes le views des models
 Est-ce que ma gestion des erreurs dans les inputs(while True, try except est bonne ou pas ?)
 Je voudrais qu'on parcours les parcours les views et les modèles ensemble pour me dire ce qui doit être dans les controllers, car ce n'est pas clair pour moi. 
 
+30/05
+J'ai du mal à vérifier que ma fonction pour apparier les joueurs aux autres roud que le 2 fonctionne bien 

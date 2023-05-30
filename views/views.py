@@ -6,6 +6,7 @@ class View:
     @staticmethod
     def intro_message():
         print("Hello, Welcome to our tournament")
+        print("Nombre de joeur pair requis...")#####
     
     @staticmethod
     def invalid_answer():
@@ -29,7 +30,7 @@ class View:
             try: 
                 start_date = datetime.datetime.strptime(input("When does it start ? (in DD/MM/YYYY)"),"%d/%m/%Y").date()
                 return start_date
-            except:
+            except ValueError:
                 print("Invalid answer")
                 continue
         
@@ -44,7 +45,7 @@ class View:
                     return start_date
                 else:
                     print("The end date has to be after the start date !")
-            except:
+            except ValueError:
                 print("Invalid answer")
                 continue
 

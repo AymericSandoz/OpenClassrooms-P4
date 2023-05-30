@@ -88,6 +88,7 @@ class Tournament:
             score = Game.attribute_score(result["winner"])
             Game.close_game(score, result["game_id"],  self.id, round_number) 
 
+
     def check_if_game_already_occurred(self, player1, player2):
         for round in self.rounds:
             for game in round.games:
@@ -96,6 +97,35 @@ class Tournament:
                     return True
                 else: 
                     return False
+
+    # def pair_players(self):
+    #     """return list of games"""
+    #     games = []
+    #     if len(self.rounds) == 1:
+    #         self.shuffle_players()
+    #         for i in range(0, len(self.players), 2):
+    #             player1 = self.players[i]
+    #             player2 = self.players[i+1]
+    #             games.append(Game(player1, player2))
+        
+    #     else:
+    #         sorted_players = sorted(self.players, key=lambda player: player["score"], reverse=True)
+    #         for i in range(0, len(self.players), 2):
+    #             player1 = sorted_players[i]
+    #             player2 = sorted_players[i+1]
+    #             if not self.check_if_game_already_occurred(player1, player2):
+    #                 games.append(Game(player1, player2))
+    #             else:
+    #                 print("TEST - pair players")
+    #                 for j in len(self.players)-i:
+    #                     player1 = sorted_players[i]
+    #                     player2 = sorted_players[i+1+j]
+    #                     if not self.check_if_game_already_occurred(player1, player2):
+    #                         games.append(Game(player1, player2))
+    #                         sorted_players[i+1], sorted_players[i+1+j] = sorted_players[i+1+j], sorted_players[i+1]
+    #                         break
+
+    #     return games
 
     def pair_players(self):
         """return list of games"""
@@ -109,24 +139,29 @@ class Tournament:
         
         else:
             sorted_players = sorted(self.players, key=lambda player: player["score"], reverse=True)
-            for i in range(0, len(self.players), 2):
-                player1 = sorted_players[i]
-                player2 = sorted_players[i+1]
+            player_index = 1
+            while len(sorted_players) > 0:
+                player1 = sorted_players[0]
+                player2 = sorted_players[player_index]
                 if not self.check_if_game_already_occurred(player1, player2):
                     games.append(Game(player1, player2))
-                else:
-                    print("TEST - pair players")
-                    for j in len(self.players)-i:
-                        player1 = sorted_players[i]
-                        player2 = sorted_players[i+1+j]
-                        if not self.check_if_game_already_occurred(player1, player2):
-                            games.append(Game(player1, player2))
-                            sorted_players[i+1], sorted_players[i+1+j] = sorted_players[i+1+j], sorted_players[i+1]
-                            break
-
+                    del sorted_players[0]
+                    del sorted_players[player_index]
+                    player_index = 1
+                
+                player_index = player_index + 1
+                if player_index == len(sorted_players) - 1:
+                    player1 = self.players[0]
+                    player2 = self.players[1]
+                    games.append(Game(player1, player2))
+                    del sorted_players[0]
+                    del sorted_players[1]
         return games
     
-    
+    #note 
+    #on pourrait utiliser une focntion récursive 
+    #peut etre plutot utiliser un while. Je recup mon premier joeur, je vais vérifier while check_if_already_occured=True, je continue dans mon while. quand j'arrive à la fin je prend le match de base 
+    #créer une liste temporaire et tant que la liste n'est pas vide continue l'appariement. 
     def get_winner(self):
         sorted_players = sorted(self.players, key=lambda player: player["score"], reverse=True)
         winners = [player for player in self.players if player['score'] == sorted_players[0]['score']]

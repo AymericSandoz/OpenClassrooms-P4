@@ -17,7 +17,6 @@ class Round:
         tournament = next((t for t in data['tournaments'] if t['id'] == tournamentId), None)#pas compris pourquoi, #chatgpt //  rechercher un tournoi spécifique dans la liste  data['tournaments'].
         #next() est une fonction qui retourne le prochain élément d'un itérable qui répond à une condition donnée. Dans ce cas, il retourne le premier tournoi qui correspond à la condition t['id'] == tournamentId.
         if tournament:
-            #tournament['games'] = [game.to_dict() for game in games]
             if round_number == 1:
                 tournament['rounds'] = [{"start_date" : self.start_date,"end_date" : self.end_date,"games" : [game.to_dict() for game in games], "round_number" : round_number, "closed" : False}]
             else:

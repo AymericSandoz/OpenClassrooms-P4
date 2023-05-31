@@ -28,6 +28,7 @@ class Tournament:
 
         with open("data/tournaments.json", "r") as f:
             data = json.load(f)
+
         for tournament in data["tournaments"]:
             if tournament["name"] == self.name:
                 tournament.update({"players": self.players})
@@ -191,6 +192,7 @@ class Tournament:
             json.dump(data, file, indent=4)
 
         return winners
+    
     
 
         

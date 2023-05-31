@@ -24,6 +24,7 @@ class Controller:
             
         players = View.get_players(ids)
         tournament.add_players(players)
+
         for i in range(tournament.nb_rounds):
             round = tournament.create_round("30/10/2020") #attention ensuite il faut que les dates se remplisse automatiquement mais pas bien compris comment ? Est ce qu'il faut que la date du jour soit uatomatiquement utilisée comme start_date 
             while not round.closed:

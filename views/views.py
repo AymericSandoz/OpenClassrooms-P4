@@ -1,4 +1,5 @@
 import datetime
+import re
 
 
 class View:
@@ -6,7 +7,11 @@ class View:
     @staticmethod
     def intro_message():
         print("Hello, Welcome to our tournament")
-        print("Nombre de joeur pair requis...")#####
+        print("The number of player must be even")
+
+    @staticmethod
+    def goodbye():
+        print("Goodbye")
     
     @staticmethod
     def invalid_answer():
@@ -60,7 +65,10 @@ class View:
                 while True:
                     id = input("Please enter player's id. (or enter 'q' to stop) : ")
                     if id == "q":
-                        break
+                        if len(players) % 2 == 0:
+                            break
+                        else:
+                            print("The number of player must be even")
                     elif id in players:
                         print(f"{id} has already been added.")
                     elif id not in players_ids:
@@ -79,7 +87,7 @@ class View:
     def menu():
         while True:
             response = input("Do you want to start a tournament (1), register players (2), or look at older tournament (3) ? ") 
-            if response not in ["1", "2", "3"]:
+            if response not in ["1", "2", "3", "4"]:
                 print("Invalid answer")
                 continue
             return response 
@@ -159,7 +167,12 @@ class View:
         print("Name:", tournament_name)
         print("Start Date:", start_date)
         print("End Date:", end_date)
-        print("Winners:", winners)
+        if len(winners) > 1:
+            print("Winners:")
+            for winner in winners:
+                print(winner["first_name"], " ", winner["last_name"])
+        else:
+            print("Winners:", winners[0]["first_name"], " ", winners[0]["last_name"])
         print("---------------------")
     
     @staticmethod
@@ -168,6 +181,9 @@ class View:
             input_ID = input("Please if your want more information on a tournament, enter it's ID:")
             if input_ID == "menu" or input_ID == "Menu":
                 return "menu"
+            if (input_ID.isdigit() and len(input_ID) == 7) is not True:
+                print("Sorry the ID format is not valid")
+                continue
             for tournament in tournaments:
                 if tournament["id"] == int(input_ID):
                     return tournament["id"]

@@ -30,16 +30,23 @@ Je ne met pas correctement à jour mon instance de modèle tournament
 Il ne faut pas que qu'il y ai de views dans les models. J'ai pas eu le temps de m'en occuper
 
 26/05
-FOnction pour apparier les joeurs pour les rounds > 1, je ne sais pas comment la faire 
-J'ai enlever toutes le views des models 
+FOnction pour apparier les joeurs pour les rounds > 1, je ne sais pas comment la faire
+J'ai enlever toutes le views des models
 Est-ce que ma gestion des erreurs dans les inputs(while True, try except est bonne ou pas ?)
-Je voudrais qu'on parcours les parcours les views et les modèles ensemble pour me dire ce qui doit être dans les controllers, car ce n'est pas clair pour moi. 
+Je voudrais qu'on parcours les parcours les views et les modèles ensemble pour me dire ce qui doit être dans les controllers, car ce n'est pas clair pour moi.
 
 30/05
-J'ai du mal à vérifier que ma fonction pour apparier les joueurs aux autres roud que le 2 fonctionne bien 
-
-
+J'ai du mal à vérifier que ma fonction pour apparier les joueurs aux autres roud que le 2 fonctionne bien
 
 Faire un diagramme de flux pour la présentation sur draw.io (diagram.net)
 
 RIch
+
+06/06
+1-Comprendre l'erreur qui se produit dans Views ligne 25 pour la fonction go_back_to_menu_or_exit_programme
+
+2- comprendre pourquoi je ne peux pas importer Views dans utils -- problème de circular import ?
+
+3- J'ai commencé la réorganisation des views et controllers : Que mettre en nom de classe et en nom de fichier ?
+
+4- Tuto Git ! PAsser de commit sans avoir peur de tout casser.

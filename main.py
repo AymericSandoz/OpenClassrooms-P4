@@ -9,7 +9,7 @@ import sys
 
 def main():
 
-    while True:
+    while True:#Il faudrais faire un controller menu
         menu_choice = View.menu()
 
         if menu_choice == "1":

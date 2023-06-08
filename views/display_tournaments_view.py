@@ -6,7 +6,7 @@ import sys
 from utils import go_back_to_menu_or_exit_programme
 
 
-class View:      
+class View:
     @staticmethod
     def display_tournament(tournament):
         print("Tournament Name:", tournament["name"])

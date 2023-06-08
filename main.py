@@ -23,11 +23,12 @@ def main():
             Controller.display_tournament()
             continue
         elif menu_choice == "4":
+            Controller.display_players()
             Controller.display_player()
             continue
         elif menu_choice == "5":
             View.goodbye()
-            sys.exit()
+            sys.exit()#test, à supp ensuite
             break
 
 

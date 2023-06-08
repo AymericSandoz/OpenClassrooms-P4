@@ -37,3 +37,9 @@ Je voudrais qu'on parcours les parcours les views et les modèles ensemble pour 
 
 30/05
 J'ai du mal à vérifier que ma fonction pour apparier les joueurs aux autres roud que le 2 fonctionne bien 
+
+
+
+Faire un diagramme de flux pour la présentation sur draw.io (diagram.net)
+
+RIch

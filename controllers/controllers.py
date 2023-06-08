@@ -5,8 +5,6 @@ import json
 
 
 class Controller:
-    # def __init__(self):
-    # self.view = View()
     
     @staticmethod
     def launch_tournament():
@@ -76,7 +74,7 @@ class Controller:
         View.display_tournament(target_tournament)
     
     @staticmethod
-    def display_players():
+    def display_player():
         with open('data/players.json') as file:
             data = json.load(file)
         players = data['players']

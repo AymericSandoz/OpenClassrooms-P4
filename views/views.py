@@ -17,10 +17,6 @@ class View:
     @staticmethod
     def goodbye():
         print("[bold]Goodbye[/bold]")
-    
-    @staticmethod
-    def invalid_answer():
-        print("[bold red]Invalid answer[bold red]")
 
     @staticmethod
     def get_tournament_name():
@@ -231,7 +227,7 @@ class View:
 
 
     @staticmethod
-    def display_player(player_id, player_first_name, player_last_name, player_date_of_birth):
+    def display_players(player_id, player_first_name, player_last_name, player_date_of_birth):
         print("Player ID :", player_id)
         print("Name :", player_first_name, player_last_name)
         print("Date of birth :", player_date_of_birth)

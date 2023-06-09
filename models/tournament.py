@@ -2,16 +2,15 @@ import random
 from models.round import Round
 from models.game import Game
 import json
-from views.views import View
+from datetime import datetime
 
 
 class Tournament:
-    def __init__(self, name, location, start_date, end_date, players=[], rounds=[], nb_rounds=4, description="tournoi d'échec",played_games=[], winners="unknown"):
+    def __init__(self, name, location, players=[], rounds=[], nb_rounds=4, description="tournoi d'échec",played_games=[], winners="unknown"):
         self.id = random.randint(1000000, 9999999)
         self.name = name
         self.location = location
-        self.start_date = start_date
-        self.end_date = end_date
+        self.start_date = datetime.now()
         self.players = players
         self.rounds = rounds
         self.nb_rounds = nb_rounds
@@ -40,11 +39,11 @@ class Tournament:
     def open_tournament(self):
         with open("data/tournaments.json", "r") as f:
             data = json.load(f)
-            id = random.randint(1000000, 9999999) 
+            print(self.start_date) 
             tournament_data = {
                 "id": self.id, 
                 "name": self.name,
-                "start date": self.start_date.strftime('%Y-%m-%d'),
+                "start date": self.start_date.strftime("%Y-%m-%d %H:%M:%S"),
                 "location": self.location,
                 "description": self.description
             }
@@ -52,9 +51,9 @@ class Tournament:
         with open("data/tournaments.json", "w") as f:
             json.dump(data, f)
 
-    def create_round(self, start_date):
+    def create_round(self):
         if len(self.rounds) < self.nb_rounds:
-            round = Round(f"{len(self.rounds) + 1}", start_date) 
+            round = Round(f"{len(self.rounds) + 1}") 
             self.rounds.append(round)
             games = self.pair_players()
             round.add_games(games, self.id, len(self.rounds))
@@ -110,35 +109,6 @@ class Tournament:
                 else: 
                     return False
 
-    # def pair_players(self):
-    #     """return list of games"""
-    #     games = []
-    #     if len(self.rounds) == 1:
-    #         self.shuffle_players()
-    #         for i in range(0, len(self.players), 2):
-    #             player1 = self.players[i]
-    #             player2 = self.players[i+1]
-    #             games.append(Game(player1, player2))
-        
-    #     else:
-    #         sorted_players = sorted(self.players, key=lambda player: player["score"], reverse=True)
-    #         for i in range(0, len(self.players), 2):
-    #             player1 = sorted_players[i]
-    #             player2 = sorted_players[i+1]
-    #             if not self.check_if_game_already_occurred(player1, player2):
-    #                 games.append(Game(player1, player2))
-    #             else:
-    #                 print("TEST - pair players")
-    #                 for j in len(self.players)-i:
-    #                     player1 = sorted_players[i]
-    #                     player2 = sorted_players[i+1+j]
-    #                     if not self.check_if_game_already_occurred(player1, player2):
-    #                         games.append(Game(player1, player2))
-    #                         sorted_players[i+1], sorted_players[i+1+j] = sorted_players[i+1+j], sorted_players[i+1]
-    #                         break
-
-    #     return games
-
     def pair_players(self):
         """return list of games"""
         games = []
@@ -192,6 +162,21 @@ class Tournament:
             json.dump(data, file, indent=4)
 
         return winners
+    
+    def close_tournament(self):
+        self.end_date = datetime.now()
+        with open('data/tournaments.json', 'r') as file:
+            data = json.load(file)
+        for tournament in data['tournaments']:
+
+            if tournament['id'] == self.id:
+                tournament['end_date'] = self.end_date
+                break
+
+        with open('data/tournaments.json', 'w') as file:
+            json.dump(data, file, indent=4)
+
+
     
     
 

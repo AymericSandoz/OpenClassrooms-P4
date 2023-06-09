@@ -2,7 +2,6 @@ import datetime
 from rich import print
 from utils import go_back_to_menu_or_exit_programme
 
-
 class Tournament_view:
     
     @staticmethod
@@ -19,7 +18,6 @@ class Tournament_view:
     def get_tournament_name():
         print("How would you like to call your [bold cyan]tournament[/bold cyan] ?")
         name = input("> ")
-        go_back_to_menu_or_exit_programme(name)
         print(f"[bold cyan]{name}[/bold cyan] ? That's an excellent name")
         return name
     
@@ -30,30 +28,30 @@ class Tournament_view:
         print("Nice ! ")
         return location
     
-    @staticmethod
-    def get_tournament_start_date():
-        while True:
-            try: 
-                start_date = datetime.datetime.strptime(input("When does it start ? (in DD/MM/YYYY)"),"%d/%m/%Y").date()
-                return start_date
-            except ValueError:
-                print("[bold red]Invalid answer[/bold red]")
-                continue
+    # @staticmethod
+    # def get_tournament_start_date():
+    #     while True:
+    #         try: 
+    #             start_date = datetime.datetime.strptime(input("When does it start ? (in DD/MM/YYYY)"),"%d/%m/%Y").date()
+    #             return start_date
+    #         except ValueError:
+    #             print("[bold red]Invalid answer[/bold red]")
+    #             continue
         
     
-    @staticmethod
-    def get_tournament_end_date(start_date):
-        while True:
-            try:
-                end_date = datetime.datetime.strptime(input("And when does it finish (in DD/MM/YYYY)? "),"%d/%m/%Y").date()
-                if (end_date >= start_date):
-                    print("perfect !")
-                    return start_date
-                else:
-                    print("[bold red]The end date has to be after the start date ![/bold red]")
-            except ValueError:
-                print("[bold red]Invalid answer[/bold red]")
-                continue
+    # @staticmethod
+    # def get_tournament_end_date(start_date):
+    #     while True:
+    #         try:
+    #             end_date = datetime.datetime.strptime(input("And when does it finish (in DD/MM/YYYY)? "),"%d/%m/%Y").date()
+    #             if (end_date >= start_date):
+    #                 print("perfect !")
+    #                 return start_date
+    #             else:
+    #                 print("[bold red]The end date has to be after the start date ![/bold red]")
+    #         except ValueError:
+    #             print("[bold red]Invalid answer[/bold red]")
+    #             continue
   
     @staticmethod
     def close_tournament(tournament_winners):

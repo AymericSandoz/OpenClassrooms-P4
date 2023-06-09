@@ -12,9 +12,9 @@ class Tournament_controller:
         Tournament_view.intro_message()
         name = Tournament_view.get_tournament_name()
         location = Tournament_view.get_tournament_location()
-        start_date = Tournament_view.get_tournament_start_date()
-        end_date = Tournament_view.get_tournament_end_date(start_date)
-        tournament = Tournament(name, location, start_date, end_date)
+        # start_date = Tournament_view.get_tournament_start_date()
+        # end_date = Tournament_view.get_tournament_end_date(start_date)
+        tournament = Tournament(name, location)
 
         with open("data/players.json", 'r') as file:
             players = json.load(file)["players"]
@@ -24,7 +24,7 @@ class Tournament_controller:
         tournament.add_players(players)
 
         for i in range(tournament.nb_rounds):
-            round = tournament.create_round("30/10/2020") #attention ensuite il faut que les dates se remplisse automatiquement mais pas bien compris comment ? Est ce qu'il faut que la date du jour soit uatomatiquement utilisée comme start_date 
+            round = tournament.create_round() #attention ensuite il faut que les dates se remplisse automatiquement mais pas bien compris comment ? Est ce qu'il faut que la date du jour soit uatomatiquement utilisée comme start_date 
             while not round.closed:
                 Games_view.show_games(round.games, i)
                 result = Games_view.input_result(round.games)
@@ -32,6 +32,7 @@ class Tournament_controller:
             tournament.actualise_players_score(i)
         
         tournament_winners = tournament.get_and_save_winners()
+        tournament.close_tournament()
         Tournament_view.close_tournament(tournament_winners)
     
     @staticmethod

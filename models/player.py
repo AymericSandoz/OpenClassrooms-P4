@@ -1,6 +1,4 @@
 import json
-from views.views import View
-
 
 class Player:
     def __init__(self, first_name, last_name, id, date_of_birth):

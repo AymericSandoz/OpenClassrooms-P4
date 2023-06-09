@@ -1,11 +1,10 @@
 import json
-
+from datetime import datetime
 
 class Round:
-    def __init__(self, name, start_date, closed=False, end_date=None):
+    def __init__(self, name, closed=False):
         self.name = name
-        self.start_date = start_date
-        self.end_date = end_date
+        self.start_date = datetime.now()
         self.games = []
         self.closed = closed
 
@@ -18,9 +17,9 @@ class Round:
         #next() est une fonction qui retourne le prochain élément d'un itérable qui répond à une condition donnée. Dans ce cas, il retourne le premier tournoi qui correspond à la condition t['id'] == tournamentId.
         if tournament:
             if round_number == 1:
-                tournament['rounds'] = [{"start_date" : self.start_date,"end_date" : self.end_date,"games" : [game.to_dict() for game in games], "round_number" : round_number, "closed" : False}]
+                tournament['rounds'] = [{"start_date" : self.start_date, "games" : [game.to_dict() for game in games], "round_number" : round_number, "closed" : False}]
             else:
-                tournament['rounds'].append({"start_date" : self.start_date,"end_date" : self.end_date,"games" : [game.to_dict() for game in games], "round_number" : round_number, "closed" : False})
+                tournament['rounds'].append({"start_date" : self.start_date, "games" : [game.to_dict() for game in games], "round_number" : round_number, "closed" : False})
             for t in data['tournaments']:
                 if t['id'] == tournamentId:
                     t = tournament
@@ -29,7 +28,7 @@ class Round:
                 json.dump(data, file, indent=4)
 
     def close_round(self, tournamentId, round_number):
-        self.end_date = "23/10/1996"  #ou self.end_date = datetime.now().strftime("%Y-%m-%d %H:%M:%S") ? 
+        self.end_date = datetime.now()
         self.closed = True
         with open('data/tournaments.json') as file:
             data = json.load(file)

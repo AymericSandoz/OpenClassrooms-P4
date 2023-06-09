@@ -1,9 +1,19 @@
+  
 from models.player import Player
-from models.tournament import Tournament
-from views.views import View
+from views.players_view import Player_view
 import json
 
-class Controller:
+
+class Player_controller:
+    @staticmethod
+    def register_player():
+        player_info = Player_view.register_player()
+        player = Player(player_info["first_name"], player_info["last_name"], player_info["id"], player_info["date_of_birth"])
+        success_message = player.register_player()
+        if success_message == "echec":
+            Player_view.id_already_existing(player.id)
+        else:
+            Player_view.register_player_to_fd_success_message(player.id)
     
     @staticmethod
     def display_players():
@@ -15,14 +25,14 @@ class Controller:
             player_first_name = player.get('first_name', 'N/A')
             player_last_name = player.get('last_name', 'N/A')
             player_date_of_birth = player.get('date_of_birth', 'N/A')
-            View.display_players(player_id, player_first_name, player_last_name, player_date_of_birth)
+            Player_view.display_players(player_id, player_first_name, player_last_name, player_date_of_birth)
     
     @staticmethod
     def display_player():
         with open("data/players.json") as file:
             data = json.load(file)
         players = data["players"]
-        player_id = View.get_player_id(players)
+        player_id = Player_view.get_player_id(players)
         if player_id == "menu":
             return 
         for player in players:
@@ -44,7 +54,4 @@ class Controller:
                         'score': player.get('score', 0)
                     })
 
-        View.display_player(target_player, player_tournaments)
-
-        
-
+        Player_view.display_player(target_player, player_tournaments)

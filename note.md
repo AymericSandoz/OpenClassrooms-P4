@@ -50,3 +50,9 @@ RIch
 3- J'ai commencé la réorganisation des views et controllers : Que mettre en nom de classe et en nom de fichier ?
 
 4- Tuto Git ! PAsser de commit sans avoir peur de tout casser.
+
+
+15/06
+Entrer end date à la fin d'un tournoi automatiuement
+
+Lors de l'enregistrment de joeur à la fédé checker les input ID et 

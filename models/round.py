@@ -10,7 +10,7 @@ class Round:
         self.closed = closed
 
     def add_games(self, games, tournamentId, round_number):
-        self.games =  games
+        self.games = games
         with open('data/tournaments.json') as file:
             data = json.load(file)
 

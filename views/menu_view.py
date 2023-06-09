@@ -1,12 +1,7 @@
-import datetime
 from rich import print
-import subprocess
-import os
-import sys
-from utils import go_back_to_menu_or_exit_programme
 
 
-class View:
+class Menu_view:
     @staticmethod
     def menu():
         while True:

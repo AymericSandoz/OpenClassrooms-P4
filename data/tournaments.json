@@ -1,10 +1,10 @@
 {
     "tournaments": [
         {
-            "id": 8970610,
-            "name": "t",
+            "id": 2167677,
+            "name": "test",
             "start date": "1996-10-23",
-            "location": "t",
+            "location": "testbis",
             "description": "tournoi d'\u00e9chec",
             "players": [
                 {
@@ -12,35 +12,35 @@
                     "first_name": "Jean",
                     "date_of_birth": "1990-05-12",
                     "id": "YR27653",
-                    "score": 4
+                    "score": 1.0
                 },
                 {
                     "last_name": "Martin",
                     "first_name": "Sophie",
                     "date_of_birth": "1998-02-28",
                     "id": "YR34681",
-                    "score": 1.5
+                    "score": 2.0
                 },
                 {
                     "last_name": "Garcia",
                     "first_name": "Pablo",
                     "date_of_birth": "1987-07-19",
                     "id": "DT91027",
-                    "score": 1.5
+                    "score": 2
                 },
                 {
                     "last_name": "Lefebvre",
                     "first_name": "Camille",
                     "date_of_birth": "2000-01-03",
                     "id": "TF52376",
-                    "score": 1.0
+                    "score": 1.5
                 },
                 {
                     "last_name": "Nguyen",
                     "first_name": "Thierry",
                     "date_of_birth": "1985-11-11",
                     "id": "CT83941",
-                    "score": 1.5
+                    "score": 4
                 },
                 {
                     "last_name": "Moreau",
@@ -54,14 +54,14 @@
                     "first_name": "Antoine",
                     "date_of_birth": "1991-04-16",
                     "id": "LE65874",
-                    "score": 2.0
+                    "score": 1.5
                 },
                 {
                     "last_name": "Fontaine",
                     "first_name": "David",
                     "date_of_birth": "1985-01-14",
                     "id": "ZD22348",
-                    "score": 2.5
+                    "score": 2.0
                 }
             ],
             "rounds": [
@@ -69,6 +69,66 @@
                     "start_date": "30/10/2020",
                     "end_date": null,
                     "games": [
+                        [
+                            {
+                                "player1": {
+                                    "last_name": "Nguyen",
+                                    "first_name": "Thierry",
+                                    "date_of_birth": "1985-11-11",
+                                    "id": "CT83941"
+                                },
+                                "score": 1
+                            },
+                            {
+                                "player2": {
+                                    "last_name": "Caron",
+                                    "first_name": "Antoine",
+                                    "date_of_birth": "1991-04-16",
+                                    "id": "LE65874"
+                                },
+                                "score": 0
+                            }
+                        ],
+                        [
+                            {
+                                "player1": {
+                                    "last_name": "Garcia",
+                                    "first_name": "Pablo",
+                                    "date_of_birth": "1987-07-19",
+                                    "id": "DT91027"
+                                },
+                                "score": 1
+                            },
+                            {
+                                "player2": {
+                                    "last_name": "Lefebvre",
+                                    "first_name": "Camille",
+                                    "date_of_birth": "2000-01-03",
+                                    "id": "TF52376"
+                                },
+                                "score": 0
+                            }
+                        ],
+                        [
+                            {
+                                "player1": {
+                                    "last_name": "Martin",
+                                    "first_name": "Sophie",
+                                    "date_of_birth": "1998-02-28",
+                                    "id": "YR34681"
+                                },
+                                "score": 0.5
+                            },
+                            {
+                                "player2": {
+                                    "last_name": "Dupont",
+                                    "first_name": "Jean",
+                                    "date_of_birth": "1990-05-12",
+                                    "id": "YR27653"
+                                },
+                                "score": 0.5
+                            }
+                        ],
                         [
                             {
                                 "player1": {
@@ -81,72 +141,12 @@
                             },
                             {
                                 "player2": {
-                                    "last_name": "Caron",
-                                    "first_name": "Antoine",
-                                    "date_of_birth": "1991-04-16",
-                                    "id": "LE65874"
-                                },
-                                "score": 0.5
-                            }
-                        ],
-                        [
-                            {
-                                "player1": {
-                                    "last_name": "Dupont",
-                                    "first_name": "Jean",
-                                    "date_of_birth": "1990-05-12",
-                                    "id": "YR27653"
-                                },
-                                "score": 1
-                            },
-                            {
-                                "player2": {
-                                    "last_name": "Nguyen",
-                                    "first_name": "Thierry",
-                                    "date_of_birth": "1985-11-11",
-                                    "id": "CT83941"
-                                },
-                                "score": 0
-                            }
-                        ],
-                        [
-                            {
-                                "player1": {
-                                    "last_name": "Lefebvre",
-                                    "first_name": "Camille",
-                                    "date_of_birth": "2000-01-03",
-                                    "id": "TF52376"
-                                },
-                                "score": 0.5
-                            },
-                            {
-                                "player2": {
-                                    "last_name": "Garcia",
-                                    "first_name": "Pablo",
-                                    "date_of_birth": "1987-07-19",
-                                    "id": "DT91027"
-                                },
-                                "score": 0.5
-                            }
-                        ],
-                        [
-                            {
-                                "player1": {
-                                    "last_name": "Martin",
-                                    "first_name": "Sophie",
-                                    "date_of_birth": "1998-02-28",
-                                    "id": "YR34681"
-                                },
-                                "score": 0
-                            },
-                            {
-                                "player2": {
                                     "last_name": "Moreau",
                                     "first_name": "Luc",
                                     "date_of_birth": "1984-04-22",
                                     "id": "KX57234"
                                 },
-                                "score": 1
+                                "score": 0.5
                             }
                         ]
                     ],
@@ -160,21 +160,43 @@
                         [
                             {
                                 "player1": {
-                                    "last_name": "Dupont",
-                                    "first_name": "Jean",
-                                    "date_of_birth": "1990-05-12",
-                                    "id": "YR27653",
+                                    "last_name": "Nguyen",
+                                    "first_name": "Thierry",
+                                    "date_of_birth": "1985-11-11",
+                                    "id": "CT83941",
                                     "score": 1
                                 },
                                 "score": 1
                             },
                             {
                                 "player2": {
-                                    "last_name": "Moreau",
-                                    "first_name": "Luc",
-                                    "date_of_birth": "1984-04-22",
-                                    "id": "KX57234",
+                                    "last_name": "Garcia",
+                                    "first_name": "Pablo",
+                                    "date_of_birth": "1987-07-19",
+                                    "id": "DT91027",
                                     "score": 1
+                                },
+                                "score": 0
+                            }
+                        ],
+                        [
+                            {
+                                "player1": {
+                                    "last_name": "Martin",
+                                    "first_name": "Sophie",
+                                    "date_of_birth": "1998-02-28",
+                                    "id": "YR34681",
+                                    "score": 0.5
+                                },
+                                "score": 1
+                            },
+                            {
+                                "player2": {
+                                    "last_name": "Dupont",
+                                    "first_name": "Jean",
+                                    "date_of_birth": "1990-05-12",
+                                    "id": "YR27653",
+                                    "score": 0.5
                                 },
                                 "score": 0
                             }
@@ -188,17 +210,17 @@
                                     "id": "ZD22348",
                                     "score": 0.5
                                 },
-                                "score": 1
+                                "score": 0.5
                             },
                             {
                                 "player2": {
-                                    "last_name": "Lefebvre",
-                                    "first_name": "Camille",
-                                    "date_of_birth": "2000-01-03",
-                                    "id": "TF52376",
+                                    "last_name": "Moreau",
+                                    "first_name": "Luc",
+                                    "date_of_birth": "1984-04-22",
+                                    "id": "KX57234",
                                     "score": 0.5
                                 },
-                                "score": 0
+                                "score": 0.5
                             }
                         ],
                         [
@@ -208,38 +230,16 @@
                                     "first_name": "Antoine",
                                     "date_of_birth": "1991-04-16",
                                     "id": "LE65874",
-                                    "score": 0.5
-                                },
-                                "score": 1
-                            },
-                            {
-                                "player2": {
-                                    "last_name": "Garcia",
-                                    "first_name": "Pablo",
-                                    "date_of_birth": "1987-07-19",
-                                    "id": "DT91027",
-                                    "score": 0.5
-                                },
-                                "score": 0
-                            }
-                        ],
-                        [
-                            {
-                                "player1": {
-                                    "last_name": "Nguyen",
-                                    "first_name": "Thierry",
-                                    "date_of_birth": "1985-11-11",
-                                    "id": "CT83941",
                                     "score": 0
                                 },
                                 "score": 0.5
                             },
                             {
                                 "player2": {
-                                    "last_name": "Martin",
-                                    "first_name": "Sophie",
-                                    "date_of_birth": "1998-02-28",
-                                    "id": "YR34681",
+                                    "last_name": "Lefebvre",
+                                    "first_name": "Camille",
+                                    "date_of_birth": "2000-01-03",
+                                    "id": "TF52376",
                                     "score": 0
                                 },
                                 "score": 0.5
@@ -256,65 +256,21 @@
                         [
                             {
                                 "player1": {
-                                    "last_name": "Dupont",
-                                    "first_name": "Jean",
-                                    "date_of_birth": "1990-05-12",
-                                    "id": "YR27653",
+                                    "last_name": "Nguyen",
+                                    "first_name": "Thierry",
+                                    "date_of_birth": "1985-11-11",
+                                    "id": "CT83941",
                                     "score": 2
                                 },
                                 "score": 1
                             },
                             {
                                 "player2": {
-                                    "last_name": "Fontaine",
-                                    "first_name": "David",
-                                    "date_of_birth": "1985-01-14",
-                                    "id": "ZD22348",
+                                    "last_name": "Martin",
+                                    "first_name": "Sophie",
+                                    "date_of_birth": "1998-02-28",
+                                    "id": "YR34681",
                                     "score": 1.5
-                                },
-                                "score": 0
-                            }
-                        ],
-                        [
-                            {
-                                "player1": {
-                                    "last_name": "Caron",
-                                    "first_name": "Antoine",
-                                    "date_of_birth": "1991-04-16",
-                                    "id": "LE65874",
-                                    "score": 1.5
-                                },
-                                "score": 0.5
-                            },
-                            {
-                                "player2": {
-                                    "last_name": "Moreau",
-                                    "first_name": "Luc",
-                                    "date_of_birth": "1984-04-22",
-                                    "id": "KX57234",
-                                    "score": 1
-                                },
-                                "score": 0.5
-                            }
-                        ],
-                        [
-                            {
-                                "player1": {
-                                    "last_name": "Nguyen",
-                                    "first_name": "Thierry",
-                                    "date_of_birth": "1985-11-11",
-                                    "id": "CT83941",
-                                    "score": 0.5
-                                },
-                                "score": 1
-                            },
-                            {
-                                "player2": {
-                                    "last_name": "Lefebvre",
-                                    "first_name": "Camille",
-                                    "date_of_birth": "2000-01-03",
-                                    "id": "TF52376",
-                                    "score": 0.5
                                 },
                                 "score": 0
                             }
@@ -326,16 +282,60 @@
                                     "first_name": "Pablo",
                                     "date_of_birth": "1987-07-19",
                                     "id": "DT91027",
+                                    "score": 1
+                                },
+                                "score": 1
+                            },
+                            {
+                                "player2": {
+                                    "last_name": "Fontaine",
+                                    "first_name": "David",
+                                    "date_of_birth": "1985-01-14",
+                                    "id": "ZD22348",
+                                    "score": 1.0
+                                },
+                                "score": 0
+                            }
+                        ],
+                        [
+                            {
+                                "player1": {
+                                    "last_name": "Moreau",
+                                    "first_name": "Luc",
+                                    "date_of_birth": "1984-04-22",
+                                    "id": "KX57234",
+                                    "score": 1.0
+                                },
+                                "score": 0.5
+                            },
+                            {
+                                "player2": {
+                                    "last_name": "Caron",
+                                    "first_name": "Antoine",
+                                    "date_of_birth": "1991-04-16",
+                                    "id": "LE65874",
+                                    "score": 0.5
+                                },
+                                "score": 0.5
+                            }
+                        ],
+                        [
+                            {
+                                "player1": {
+                                    "last_name": "Lefebvre",
+                                    "first_name": "Camille",
+                                    "date_of_birth": "2000-01-03",
+                                    "id": "TF52376",
                                     "score": 0.5
                                 },
                                 "score": 0.5
                             },
                             {
                                 "player2": {
-                                    "last_name": "Martin",
-                                    "first_name": "Sophie",
-                                    "date_of_birth": "1998-02-28",
-                                    "id": "YR34681",
+                                    "last_name": "Dupont",
+                                    "first_name": "Jean",
+                                    "date_of_birth": "1990-05-12",
+                                    "id": "YR27653",
                                     "score": 0.5
                                 },
                                 "score": 0.5
@@ -352,57 +352,13 @@
                         [
                             {
                                 "player1": {
-                                    "last_name": "Dupont",
-                                    "first_name": "Jean",
-                                    "date_of_birth": "1990-05-12",
-                                    "id": "YR27653",
-                                    "score": 3
-                                },
-                                "score": 1
-                            },
-                            {
-                                "player2": {
-                                    "last_name": "Caron",
-                                    "first_name": "Antoine",
-                                    "date_of_birth": "1991-04-16",
-                                    "id": "LE65874",
-                                    "score": 2.0
-                                },
-                                "score": 0
-                            }
-                        ],
-                        [
-                            {
-                                "player1": {
-                                    "last_name": "Fontaine",
-                                    "first_name": "David",
-                                    "date_of_birth": "1985-01-14",
-                                    "id": "ZD22348",
-                                    "score": 1.5
-                                },
-                                "score": 1
-                            },
-                            {
-                                "player2": {
                                     "last_name": "Nguyen",
                                     "first_name": "Thierry",
                                     "date_of_birth": "1985-11-11",
                                     "id": "CT83941",
-                                    "score": 1.5
+                                    "score": 3
                                 },
-                                "score": 0
-                            }
-                        ],
-                        [
-                            {
-                                "player1": {
-                                    "last_name": "Moreau",
-                                    "first_name": "Luc",
-                                    "date_of_birth": "1984-04-22",
-                                    "id": "KX57234",
-                                    "score": 1.5
-                                },
-                                "score": 0.5
+                                "score": 1
                             },
                             {
                                 "player2": {
@@ -410,9 +366,9 @@
                                     "first_name": "Pablo",
                                     "date_of_birth": "1987-07-19",
                                     "id": "DT91027",
-                                    "score": 1.0
+                                    "score": 2
                                 },
-                                "score": 0.5
+                                "score": 0
                             }
                         ],
                         [
@@ -422,6 +378,28 @@
                                     "first_name": "Sophie",
                                     "date_of_birth": "1998-02-28",
                                     "id": "YR34681",
+                                    "score": 1.5
+                                },
+                                "score": 0.5
+                            },
+                            {
+                                "player2": {
+                                    "last_name": "Moreau",
+                                    "first_name": "Luc",
+                                    "date_of_birth": "1984-04-22",
+                                    "id": "KX57234",
+                                    "score": 1.5
+                                },
+                                "score": 0.5
+                            }
+                        ],
+                        [
+                            {
+                                "player1": {
+                                    "last_name": "Caron",
+                                    "first_name": "Antoine",
+                                    "date_of_birth": "1991-04-16",
+                                    "id": "LE65874",
                                     "score": 1.0
                                 },
                                 "score": 0.5
@@ -432,9 +410,31 @@
                                     "first_name": "Camille",
                                     "date_of_birth": "2000-01-03",
                                     "id": "TF52376",
-                                    "score": 0.5
+                                    "score": 1.0
                                 },
                                 "score": 0.5
+                            }
+                        ],
+                        [
+                            {
+                                "player1": {
+                                    "last_name": "Dupont",
+                                    "first_name": "Jean",
+                                    "date_of_birth": "1990-05-12",
+                                    "id": "YR27653",
+                                    "score": 1.0
+                                },
+                                "score": 0
+                            },
+                            {
+                                "player2": {
+                                    "last_name": "Fontaine",
+                                    "first_name": "David",
+                                    "date_of_birth": "1985-01-14",
+                                    "id": "ZD22348",
+                                    "score": 1.0
+                                },
+                                "score": 1
                             }
                         ]
                     ],
@@ -443,1063 +443,12 @@
                 }
             ],
             "winners": [
-                {
-                    "last_name": "Dupont",
-                    "first_name": "Jean",
-                    "date_of_birth": "1990-05-12",
-                    "id": "YR27653",
-                    "score": 4
-                }
-            ]
-        },
-        {
-            "id": 8970610,
-            "name": "t",
-            "start date": "1996-10-23",
-            "location": "t",
-            "description": "tournoi d'\u00e9chec",
-            "players": [
-                {
-                    "last_name": "Dupont",
-                    "first_name": "Jean",
-                    "date_of_birth": "1990-05-12",
-                    "id": "YR27653",
-                    "score": 4
-                },
-                {
-                    "last_name": "Martin",
-                    "first_name": "Sophie",
-                    "date_of_birth": "1998-02-28",
-                    "id": "YR34681",
-                    "score": 1.5
-                },
-                {
-                    "last_name": "Garcia",
-                    "first_name": "Pablo",
-                    "date_of_birth": "1987-07-19",
-                    "id": "DT91027",
-                    "score": 1.5
-                },
-                {
-                    "last_name": "Lefebvre",
-                    "first_name": "Camille",
-                    "date_of_birth": "2000-01-03",
-                    "id": "TF52376",
-                    "score": 1.0
-                },
                 {
                     "last_name": "Nguyen",
                     "first_name": "Thierry",
                     "date_of_birth": "1985-11-11",
                     "id": "CT83941",
-                    "score": 1.5
-                },
-                {
-                    "last_name": "Moreau",
-                    "first_name": "Luc",
-                    "date_of_birth": "1984-04-22",
-                    "id": "KX57234",
-                    "score": 2.0
-                },
-                {
-                    "last_name": "Caron",
-                    "first_name": "Antoine",
-                    "date_of_birth": "1991-04-16",
-                    "id": "LE65874",
-                    "score": 2.0
-                },
-                {
-                    "last_name": "Fontaine",
-                    "first_name": "David",
-                    "date_of_birth": "1985-01-14",
-                    "id": "ZD22348",
-                    "score": 2.5
-                }
-            ],
-            "rounds": [
-                {
-                    "start_date": "30/10/2020",
-                    "end_date": null,
-                    "games": [
-                        [
-                            {
-                                "player1": {
-                                    "last_name": "Fontaine",
-                                    "first_name": "David",
-                                    "date_of_birth": "1985-01-14",
-                                    "id": "ZD22348"
-                                },
-                                "score": 0.5
-                            },
-                            {
-                                "player2": {
-                                    "last_name": "Caron",
-                                    "first_name": "Antoine",
-                                    "date_of_birth": "1991-04-16",
-                                    "id": "LE65874"
-                                },
-                                "score": 0.5
-                            }
-                        ],
-                        [
-                            {
-                                "player1": {
-                                    "last_name": "Dupont",
-                                    "first_name": "Jean",
-                                    "date_of_birth": "1990-05-12",
-                                    "id": "YR27653"
-                                },
-                                "score": 1
-                            },
-                            {
-                                "player2": {
-                                    "last_name": "Nguyen",
-                                    "first_name": "Thierry",
-                                    "date_of_birth": "1985-11-11",
-                                    "id": "CT83941"
-                                },
-                                "score": 0
-                            }
-                        ],
-                        [
-                            {
-                                "player1": {
-                                    "last_name": "Lefebvre",
-                                    "first_name": "Camille",
-                                    "date_of_birth": "2000-01-03",
-                                    "id": "TF52376"
-                                },
-                                "score": 0.5
-                            },
-                            {
-                                "player2": {
-                                    "last_name": "Garcia",
-                                    "first_name": "Pablo",
-                                    "date_of_birth": "1987-07-19",
-                                    "id": "DT91027"
-                                },
-                                "score": 0.5
-                            }
-                        ],
-                        [
-                            {
-                                "player1": {
-                                    "last_name": "Martin",
-                                    "first_name": "Sophie",
-                                    "date_of_birth": "1998-02-28",
-                                    "id": "YR34681"
-                                },
-                                "score": 0
-                            },
-                            {
-                                "player2": {
-                                    "last_name": "Moreau",
-                                    "first_name": "Luc",
-                                    "date_of_birth": "1984-04-22",
-                                    "id": "KX57234"
-                                },
-                                "score": 1
-                            }
-                        ]
-                    ],
-                    "round_number": 1,
-                    "closed": true
-                },
-                {
-                    "start_date": "30/10/2020",
-                    "end_date": null,
-                    "games": [
-                        [
-                            {
-                                "player1": {
-                                    "last_name": "Dupont",
-                                    "first_name": "Jean",
-                                    "date_of_birth": "1990-05-12",
-                                    "id": "YR27653",
-                                    "score": 1
-                                },
-                                "score": 1
-                            },
-                            {
-                                "player2": {
-                                    "last_name": "Moreau",
-                                    "first_name": "Luc",
-                                    "date_of_birth": "1984-04-22",
-                                    "id": "KX57234",
-                                    "score": 1
-                                },
-                                "score": 0
-                            }
-                        ],
-                        [
-                            {
-                                "player1": {
-                                    "last_name": "Fontaine",
-                                    "first_name": "David",
-                                    "date_of_birth": "1985-01-14",
-                                    "id": "ZD22348",
-                                    "score": 0.5
-                                },
-                                "score": 1
-                            },
-                            {
-                                "player2": {
-                                    "last_name": "Lefebvre",
-                                    "first_name": "Camille",
-                                    "date_of_birth": "2000-01-03",
-                                    "id": "TF52376",
-                                    "score": 0.5
-                                },
-                                "score": 0
-                            }
-                        ],
-                        [
-                            {
-                                "player1": {
-                                    "last_name": "Caron",
-                                    "first_name": "Antoine",
-                                    "date_of_birth": "1991-04-16",
-                                    "id": "LE65874",
-                                    "score": 0.5
-                                },
-                                "score": 1
-                            },
-                            {
-                                "player2": {
-                                    "last_name": "Garcia",
-                                    "first_name": "Pablo",
-                                    "date_of_birth": "1987-07-19",
-                                    "id": "DT91027",
-                                    "score": 0.5
-                                },
-                                "score": 0
-                            }
-                        ],
-                        [
-                            {
-                                "player1": {
-                                    "last_name": "Nguyen",
-                                    "first_name": "Thierry",
-                                    "date_of_birth": "1985-11-11",
-                                    "id": "CT83941",
-                                    "score": 0
-                                },
-                                "score": 0.5
-                            },
-                            {
-                                "player2": {
-                                    "last_name": "Martin",
-                                    "first_name": "Sophie",
-                                    "date_of_birth": "1998-02-28",
-                                    "id": "YR34681",
-                                    "score": 0
-                                },
-                                "score": 0.5
-                            }
-                        ]
-                    ],
-                    "round_number": 2,
-                    "closed": true
-                },
-                {
-                    "start_date": "30/10/2020",
-                    "end_date": null,
-                    "games": [
-                        [
-                            {
-                                "player1": {
-                                    "last_name": "Dupont",
-                                    "first_name": "Jean",
-                                    "date_of_birth": "1990-05-12",
-                                    "id": "YR27653",
-                                    "score": 2
-                                },
-                                "score": 1
-                            },
-                            {
-                                "player2": {
-                                    "last_name": "Fontaine",
-                                    "first_name": "David",
-                                    "date_of_birth": "1985-01-14",
-                                    "id": "ZD22348",
-                                    "score": 1.5
-                                },
-                                "score": 0
-                            }
-                        ],
-                        [
-                            {
-                                "player1": {
-                                    "last_name": "Caron",
-                                    "first_name": "Antoine",
-                                    "date_of_birth": "1991-04-16",
-                                    "id": "LE65874",
-                                    "score": 1.5
-                                },
-                                "score": 0.5
-                            },
-                            {
-                                "player2": {
-                                    "last_name": "Moreau",
-                                    "first_name": "Luc",
-                                    "date_of_birth": "1984-04-22",
-                                    "id": "KX57234",
-                                    "score": 1
-                                },
-                                "score": 0.5
-                            }
-                        ],
-                        [
-                            {
-                                "player1": {
-                                    "last_name": "Nguyen",
-                                    "first_name": "Thierry",
-                                    "date_of_birth": "1985-11-11",
-                                    "id": "CT83941",
-                                    "score": 0.5
-                                },
-                                "score": 1
-                            },
-                            {
-                                "player2": {
-                                    "last_name": "Lefebvre",
-                                    "first_name": "Camille",
-                                    "date_of_birth": "2000-01-03",
-                                    "id": "TF52376",
-                                    "score": 0.5
-                                },
-                                "score": 0
-                            }
-                        ],
-                        [
-                            {
-                                "player1": {
-                                    "last_name": "Garcia",
-                                    "first_name": "Pablo",
-                                    "date_of_birth": "1987-07-19",
-                                    "id": "DT91027",
-                                    "score": 0.5
-                                },
-                                "score": 0.5
-                            },
-                            {
-                                "player2": {
-                                    "last_name": "Martin",
-                                    "first_name": "Sophie",
-                                    "date_of_birth": "1998-02-28",
-                                    "id": "YR34681",
-                                    "score": 0.5
-                                },
-                                "score": 0.5
-                            }
-                        ]
-                    ],
-                    "round_number": 3,
-                    "closed": true
-                },
-                {
-                    "start_date": "30/10/2020",
-                    "end_date": null,
-                    "games": [
-                        [
-                            {
-                                "player1": {
-                                    "last_name": "Dupont",
-                                    "first_name": "Jean",
-                                    "date_of_birth": "1990-05-12",
-                                    "id": "YR27653",
-                                    "score": 3
-                                },
-                                "score": 1
-                            },
-                            {
-                                "player2": {
-                                    "last_name": "Caron",
-                                    "first_name": "Antoine",
-                                    "date_of_birth": "1991-04-16",
-                                    "id": "LE65874",
-                                    "score": 2.0
-                                },
-                                "score": 0
-                            }
-                        ],
-                        [
-                            {
-                                "player1": {
-                                    "last_name": "Fontaine",
-                                    "first_name": "David",
-                                    "date_of_birth": "1985-01-14",
-                                    "id": "ZD22348",
-                                    "score": 1.5
-                                },
-                                "score": 1
-                            },
-                            {
-                                "player2": {
-                                    "last_name": "Nguyen",
-                                    "first_name": "Thierry",
-                                    "date_of_birth": "1985-11-11",
-                                    "id": "CT83941",
-                                    "score": 1.5
-                                },
-                                "score": 0
-                            }
-                        ],
-                        [
-                            {
-                                "player1": {
-                                    "last_name": "Moreau",
-                                    "first_name": "Luc",
-                                    "date_of_birth": "1984-04-22",
-                                    "id": "KX57234",
-                                    "score": 1.5
-                                },
-                                "score": 0.5
-                            },
-                            {
-                                "player2": {
-                                    "last_name": "Garcia",
-                                    "first_name": "Pablo",
-                                    "date_of_birth": "1987-07-19",
-                                    "id": "DT91027",
-                                    "score": 1.0
-                                },
-                                "score": 0.5
-                            }
-                        ],
-                        [
-                            {
-                                "player1": {
-                                    "last_name": "Martin",
-                                    "first_name": "Sophie",
-                                    "date_of_birth": "1998-02-28",
-                                    "id": "YR34681",
-                                    "score": 1.0
-                                },
-                                "score": 0.5
-                            },
-                            {
-                                "player2": {
-                                    "last_name": "Lefebvre",
-                                    "first_name": "Camille",
-                                    "date_of_birth": "2000-01-03",
-                                    "id": "TF52376",
-                                    "score": 0.5
-                                },
-                                "score": 0.5
-                            }
-                        ]
-                    ],
-                    "round_number": 4,
-                    "closed": false
-                }
-            ],
-            "winners": [
-                {
-                    "last_name": "Dupont",
-                    "first_name": "Jean",
-                    "date_of_birth": "1990-05-12",
-                    "id": "YR27653",
                     "score": 4
-                }
-            ]
-        },
-        {
-            "id": 8970610,
-            "name": "t",
-            "start date": "1996-10-23",
-            "location": "t",
-            "description": "tournoi d'\u00e9chec",
-            "players": [
-                {
-                    "last_name": "Dupont",
-                    "first_name": "Jean",
-                    "date_of_birth": "1990-05-12",
-                    "id": "YR27653",
-                    "score": 4
-                },
-                {
-                    "last_name": "Martin",
-                    "first_name": "Sophie",
-                    "date_of_birth": "1998-02-28",
-                    "id": "YR34681",
-                    "score": 1.5
-                },
-                {
-                    "last_name": "Garcia",
-                    "first_name": "Pablo",
-                    "date_of_birth": "1987-07-19",
-                    "id": "DT91027",
-                    "score": 1.5
-                },
-                {
-                    "last_name": "Lefebvre",
-                    "first_name": "Camille",
-                    "date_of_birth": "2000-01-03",
-                    "id": "TF52376",
-                    "score": 1.0
-                },
-                {
-                    "last_name": "Nguyen",
-                    "first_name": "Thierry",
-                    "date_of_birth": "1985-11-11",
-                    "id": "CT83941",
-                    "score": 1.5
-                },
-                {
-                    "last_name": "Moreau",
-                    "first_name": "Luc",
-                    "date_of_birth": "1984-04-22",
-                    "id": "KX57234",
-                    "score": 2.0
-                },
-                {
-                    "last_name": "Caron",
-                    "first_name": "Antoine",
-                    "date_of_birth": "1991-04-16",
-                    "id": "LE65874",
-                    "score": 2.0
-                },
-                {
-                    "last_name": "Fontaine",
-                    "first_name": "David",
-                    "date_of_birth": "1985-01-14",
-                    "id": "ZD22348",
-                    "score": 2.5
-                }
-            ],
-            "rounds": [
-                {
-                    "start_date": "30/10/2020",
-                    "end_date": null,
-                    "games": [
-                        [
-                            {
-                                "player1": {
-                                    "last_name": "Fontaine",
-                                    "first_name": "David",
-                                    "date_of_birth": "1985-01-14",
-                                    "id": "ZD22348"
-                                },
-                                "score": 0.5
-                            },
-                            {
-                                "player2": {
-                                    "last_name": "Caron",
-                                    "first_name": "Antoine",
-                                    "date_of_birth": "1991-04-16",
-                                    "id": "LE65874"
-                                },
-                                "score": 0.5
-                            }
-                        ],
-                        [
-                            {
-                                "player1": {
-                                    "last_name": "Dupont",
-                                    "first_name": "Jean",
-                                    "date_of_birth": "1990-05-12",
-                                    "id": "YR27653"
-                                },
-                                "score": 1
-                            },
-                            {
-                                "player2": {
-                                    "last_name": "Nguyen",
-                                    "first_name": "Thierry",
-                                    "date_of_birth": "1985-11-11",
-                                    "id": "CT83941"
-                                },
-                                "score": 0
-                            }
-                        ],
-                        [
-                            {
-                                "player1": {
-                                    "last_name": "Lefebvre",
-                                    "first_name": "Camille",
-                                    "date_of_birth": "2000-01-03",
-                                    "id": "TF52376"
-                                },
-                                "score": 0.5
-                            },
-                            {
-                                "player2": {
-                                    "last_name": "Garcia",
-                                    "first_name": "Pablo",
-                                    "date_of_birth": "1987-07-19",
-                                    "id": "DT91027"
-                                },
-                                "score": 0.5
-                            }
-                        ],
-                        [
-                            {
-                                "player1": {
-                                    "last_name": "Martin",
-                                    "first_name": "Sophie",
-                                    "date_of_birth": "1998-02-28",
-                                    "id": "YR34681"
-                                },
-                                "score": 0
-                            },
-                            {
-                                "player2": {
-                                    "last_name": "Moreau",
-                                    "first_name": "Luc",
-                                    "date_of_birth": "1984-04-22",
-                                    "id": "KX57234"
-                                },
-                                "score": 1
-                            }
-                        ]
-                    ],
-                    "round_number": 1,
-                    "closed": true
-                },
-                {
-                    "start_date": "30/10/2020",
-                    "end_date": null,
-                    "games": [
-                        [
-                            {
-                                "player1": {
-                                    "last_name": "Dupont",
-                                    "first_name": "Jean",
-                                    "date_of_birth": "1990-05-12",
-                                    "id": "YR27653",
-                                    "score": 1
-                                },
-                                "score": 1
-                            },
-                            {
-                                "player2": {
-                                    "last_name": "Moreau",
-                                    "first_name": "Luc",
-                                    "date_of_birth": "1984-04-22",
-                                    "id": "KX57234",
-                                    "score": 1
-                                },
-                                "score": 0
-                            }
-                        ],
-                        [
-                            {
-                                "player1": {
-                                    "last_name": "Fontaine",
-                                    "first_name": "David",
-                                    "date_of_birth": "1985-01-14",
-                                    "id": "ZD22348",
-                                    "score": 0.5
-                                },
-                                "score": 1
-                            },
-                            {
-                                "player2": {
-                                    "last_name": "Lefebvre",
-                                    "first_name": "Camille",
-                                    "date_of_birth": "2000-01-03",
-                                    "id": "TF52376",
-                                    "score": 0.5
-                                },
-                                "score": 0
-                            }
-                        ],
-                        [
-                            {
-                                "player1": {
-                                    "last_name": "Caron",
-                                    "first_name": "Antoine",
-                                    "date_of_birth": "1991-04-16",
-                                    "id": "LE65874",
-                                    "score": 0.5
-                                },
-                                "score": 1
-                            },
-                            {
-                                "player2": {
-                                    "last_name": "Garcia",
-                                    "first_name": "Pablo",
-                                    "date_of_birth": "1987-07-19",
-                                    "id": "DT91027",
-                                    "score": 0.5
-                                },
-                                "score": 0
-                            }
-                        ],
-                        [
-                            {
-                                "player1": {
-                                    "last_name": "Nguyen",
-                                    "first_name": "Thierry",
-                                    "date_of_birth": "1985-11-11",
-                                    "id": "CT83941",
-                                    "score": 0
-                                },
-                                "score": 0.5
-                            },
-                            {
-                                "player2": {
-                                    "last_name": "Martin",
-                                    "first_name": "Sophie",
-                                    "date_of_birth": "1998-02-28",
-                                    "id": "YR34681",
-                                    "score": 0
-                                },
-                                "score": 0.5
-                            }
-                        ]
-                    ],
-                    "round_number": 2,
-                    "closed": true
-                },
-                {
-                    "start_date": "30/10/2020",
-                    "end_date": null,
-                    "games": [
-                        [
-                            {
-                                "player1": {
-                                    "last_name": "Dupont",
-                                    "first_name": "Jean",
-                                    "date_of_birth": "1990-05-12",
-                                    "id": "YR27653",
-                                    "score": 2
-                                },
-                                "score": 1
-                            },
-                            {
-                                "player2": {
-                                    "last_name": "Fontaine",
-                                    "first_name": "David",
-                                    "date_of_birth": "1985-01-14",
-                                    "id": "ZD22348",
-                                    "score": 1.5
-                                },
-                                "score": 0
-                            }
-                        ],
-                        [
-                            {
-                                "player1": {
-                                    "last_name": "Caron",
-                                    "first_name": "Antoine",
-                                    "date_of_birth": "1991-04-16",
-                                    "id": "LE65874",
-                                    "score": 1.5
-                                },
-                                "score": 0.5
-                            },
-                            {
-                                "player2": {
-                                    "last_name": "Moreau",
-                                    "first_name": "Luc",
-                                    "date_of_birth": "1984-04-22",
-                                    "id": "KX57234",
-                                    "score": 1
-                                },
-                                "score": 0.5
-                            }
-                        ],
-                        [
-                            {
-                                "player1": {
-                                    "last_name": "Nguyen",
-                                    "first_name": "Thierry",
-                                    "date_of_birth": "1985-11-11",
-                                    "id": "CT83941",
-                                    "score": 0.5
-                                },
-                                "score": 1
-                            },
-                            {
-                                "player2": {
-                                    "last_name": "Lefebvre",
-                                    "first_name": "Camille",
-                                    "date_of_birth": "2000-01-03",
-                                    "id": "TF52376",
-                                    "score": 0.5
-                                },
-                                "score": 0
-                            }
-                        ],
-                        [
-                            {
-                                "player1": {
-                                    "last_name": "Garcia",
-                                    "first_name": "Pablo",
-                                    "date_of_birth": "1987-07-19",
-                                    "id": "DT91027",
-                                    "score": 0.5
-                                },
-                                "score": 0.5
-                            },
-                            {
-                                "player2": {
-                                    "last_name": "Martin",
-                                    "first_name": "Sophie",
-                                    "date_of_birth": "1998-02-28",
-                                    "id": "YR34681",
-                                    "score": 0.5
-                                },
-                                "score": 0.5
-                            }
-                        ]
-                    ],
-                    "round_number": 3,
-                    "closed": true
-                },
-                {
-                    "start_date": "30/10/2020",
-                    "end_date": null,
-                    "games": [
-                        [
-                            {
-                                "player1": {
-                                    "last_name": "Dupont",
-                                    "first_name": "Jean",
-                                    "date_of_birth": "1990-05-12",
-                                    "id": "YR27653",
-                                    "score": 3
-                                },
-                                "score": 1
-                            },
-                            {
-                                "player2": {
-                                    "last_name": "Caron",
-                                    "first_name": "Antoine",
-                                    "date_of_birth": "1991-04-16",
-                                    "id": "LE65874",
-                                    "score": 2.0
-                                },
-                                "score": 0
-                            }
-                        ],
-                        [
-                            {
-                                "player1": {
-                                    "last_name": "Fontaine",
-                                    "first_name": "David",
-                                    "date_of_birth": "1985-01-14",
-                                    "id": "ZD22348",
-                                    "score": 1.5
-                                },
-                                "score": 1
-                            },
-                            {
-                                "player2": {
-                                    "last_name": "Nguyen",
-                                    "first_name": "Thierry",
-                                    "date_of_birth": "1985-11-11",
-                                    "id": "CT83941",
-                                    "score": 1.5
-                                },
-                                "score": 0
-                            }
-                        ],
-                        [
-                            {
-                                "player1": {
-                                    "last_name": "Moreau",
-                                    "first_name": "Luc",
-                                    "date_of_birth": "1984-04-22",
-                                    "id": "KX57234",
-                                    "score": 1.5
-                                },
-                                "score": 0.5
-                            },
-                            {
-                                "player2": {
-                                    "last_name": "Garcia",
-                                    "first_name": "Pablo",
-                                    "date_of_birth": "1987-07-19",
-                                    "id": "DT91027",
-                                    "score": 1.0
-                                },
-                                "score": 0.5
-                            }
-                        ],
-                        [
-                            {
-                                "player1": {
-                                    "last_name": "Martin",
-                                    "first_name": "Sophie",
-                                    "date_of_birth": "1998-02-28",
-                                    "id": "YR34681",
-                                    "score": 1.0
-                                },
-                                "score": 0.5
-                            },
-                            {
-                                "player2": {
-                                    "last_name": "Lefebvre",
-                                    "first_name": "Camille",
-                                    "date_of_birth": "2000-01-03",
-                                    "id": "TF52376",
-                                    "score": 0.5
-                                },
-                                "score": 0.5
-                            }
-                        ]
-                    ],
-                    "round_number": 4,
-                    "closed": false
-                }
-            ],
-            "winners": [
-                {
-                    "last_name": "Dupont",
-                    "first_name": "Jean",
-                    "date_of_birth": "1990-05-12",
-                    "id": "YR27653",
-                    "score": 4
-                }
-            ]
-        },
-        {
-            "id": 3216106,
-            "name": "a",
-            "start date": "1996-10-23",
-            "location": "a",
-            "description": "tournoi d'\u00e9chec",
-            "players": [
-                {
-                    "last_name": "Dupont",
-                    "first_name": "Jean",
-                    "date_of_birth": "1990-05-12",
-                    "id": "YR27653"
-                },
-                {
-                    "last_name": "Martin",
-                    "first_name": "Sophie",
-                    "date_of_birth": "1998-02-28",
-                    "id": "YR34681"
-                },
-                {
-                    "last_name": "Garcia",
-                    "first_name": "Pablo",
-                    "date_of_birth": "1987-07-19",
-                    "id": "DT91027"
-                },
-                {
-                    "last_name": "Lefebvre",
-                    "first_name": "Camille",
-                    "date_of_birth": "2000-01-03",
-                    "id": "TF52376"
-                },
-                {
-                    "last_name": "Nguyen",
-                    "first_name": "Thierry",
-                    "date_of_birth": "1985-11-11",
-                    "id": "CT83941"
-                },
-                {
-                    "last_name": "Moreau",
-                    "first_name": "Luc",
-                    "date_of_birth": "1984-04-22",
-                    "id": "KX57234"
-                },
-                {
-                    "last_name": "Caron",
-                    "first_name": "Antoine",
-                    "date_of_birth": "1991-04-16",
-                    "id": "LE65874"
-                },
-                {
-                    "last_name": "Fontaine",
-                    "first_name": "David",
-                    "date_of_birth": "1985-01-14",
-                    "id": "ZD22348"
-                }
-            ],
-            "rounds": [
-                {
-                    "start_date": "30/10/2020",
-                    "end_date": null,
-                    "games": [
-                        [
-                            {
-                                "player1": {
-                                    "last_name": "Garcia",
-                                    "first_name": "Pablo",
-                                    "date_of_birth": "1987-07-19",
-                                    "id": "DT91027"
-                                },
-                                "score": null
-                            },
-                            {
-                                "player2": {
-                                    "last_name": "Martin",
-                                    "first_name": "Sophie",
-                                    "date_of_birth": "1998-02-28",
-                                    "id": "YR34681"
-                                },
-                                "score": null
-                            }
-                        ],
-                        [
-                            {
-                                "player1": {
-                                    "last_name": "Nguyen",
-                                    "first_name": "Thierry",
-                                    "date_of_birth": "1985-11-11",
-                                    "id": "CT83941"
-                                },
-                                "score": null
-                            },
-                            {
-                                "player2": {
-                                    "last_name": "Caron",
-                                    "first_name": "Antoine",
-                                    "date_of_birth": "1991-04-16",
-                                    "id": "LE65874"
-                                },
-                                "score": null
-                            }
-                        ],
-                        [
-                            {
-                                "player1": {
-                                    "last_name": "Moreau",
-                                    "first_name": "Luc",
-                                    "date_of_birth": "1984-04-22",
-                                    "id": "KX57234"
-                                },
-                                "score": null
-                            },
-                            {
-                                "player2": {
-                                    "last_name": "Lefebvre",
-                                    "first_name": "Camille",
-                                    "date_of_birth": "2000-01-03",
-                                    "id": "TF52376"
-                                },
-                                "score": null
-                            }
-                        ],
-                        [
-                            {
-                                "player1": {
-                                    "last_name": "Fontaine",
-                                    "first_name": "David",
-                                    "date_of_birth": "1985-01-14",
-                                    "id": "ZD22348"
-                                },
-                                "score": null
-                            },
-                            {
-                                "player2": {
-                                    "last_name": "Dupont",
-                                    "first_name": "Jean",
-                                    "date_of_birth": "1990-05-12",
-                                    "id": "YR27653"
-                                },
-                                "score": null
-                            }
-                        ]
-                    ],
-                    "round_number": 1,
-                    "closed": false
                 }
             ]
         }

@@ -1,12 +1,9 @@
 import datetime
 from rich import print
-import subprocess
-import os
-import sys
 from utils import go_back_to_menu_or_exit_programme
 
 
-class View:
+class Tournament_view:
     
     @staticmethod
     def intro_message():
@@ -57,39 +54,7 @@ class View:
             except ValueError:
                 print("[bold red]Invalid answer[/bold red]")
                 continue
-
-    @staticmethod
-    def get_players(players_ids):
-        "register player to tournament"
-        print("It's now time to register players")
-        while True:
-            print("[bold]Do you want to add manually players or choose a list of preregistered players?[/bold]")
-            print("[cyan]1.[/cyan] Add manually players")
-            print("[cyan]2.[/cyan] Choose a list of preregistered players")
-            reponse = input("> ")
-            players = []
-            if reponse == "1":
-                while True:
-                    id = input("Please enter player's id. (or enter 'exit' to stop) : ")
-                    if id == "exit":
-                        if len(players) % 2 == 0:
-                            break
-                        else:
-                            print("The number of player must be even")
-                    elif id in players:
-                        print(f"[bold red]{id} has already been added.[/bold red]")
-                    elif id not in players_ids:
-                        print(f"[bold red]{id} not registered in our list of player.[/bold red]")
-                    else:
-                        players.append((id))
-            elif reponse == "2":
-                players.extend(["YR27653", "YR34681", "DT91027", "TF52376", "CT83941", "KX57234", "LE65874", "ZD22348"])#permet d'ajouter les éléments directement dans la liste [] au lieu de les impriquer
-            else:
-                print("[bold red]Invalid answer[/bold red]")
-                continue
-            
-            return players
-    
+  
     @staticmethod
     def close_tournament(tournament_winners):
         print('[bold]Thanks, the tournament is over[bold]')
@@ -106,4 +71,52 @@ class View:
     @staticmethod
     def no_player_found(id):
         print(f"[bold red]Aucun joueur avec l'ID {id} n'a été trouvé.[/bold red]")
+    
+    @staticmethod
+    def display_tournament(tournament):
+        print("Tournament Name:", tournament["name"])
+        print("Start Date:", tournament["start date"])
+        print("Location:", tournament["location"])
+        print("Description:", tournament["description"])
+        print("Players:")
+        for player in tournament["players"]:
+            print(player["first_name"], player["last_name"], "ID:", player["id"])
+        print("Rounds:")
+        for round in tournament["rounds"]:
+            print("Round", round["round_number"])
+            for game in round["games"]:
+                player1 = game[0]["player1"]
+                player2 = game[1]["player2"]
+                print(player1["first_name"], player1["last_name"], "vs", player2["first_name"], player2["last_name"])
+                print("Score:", game[0]["score"], "-", game[1]["score"])
+                print("[bold]---------------------[/bold]")
+    
+    @staticmethod
+    def display_tournaments(tournament_id, tournament_name, start_date, end_date, winners):
+        print("Tournament ID:", tournament_id)
+        print("Name:", tournament_name)
+        print("Start Date:", start_date)
+        print("End Date:", end_date)
+        if len(winners) > 1:
+            print("Winners:")
+            for winner in winners:
+                print(winner["first_name"], winner["last_name"])
+        elif winners != []:
+            print("Winners:", winners[0]["first_name"], " ", winners[0]["last_name"])
+        print("[cyan]---------------------[cyan]")
+    
+    @staticmethod
+    def get_tournament_id(tournaments):
+        while True:
+            input_ID = input("Please if your want more information on a tournament, enter it's ID:")
+            if input_ID == "menu" or input_ID == "Menu":
+                return "menu"
+            if (input_ID.isdigit() and len(input_ID) == 7) is not True:
+                print("[bold red]Sorry the ID format is not valid[/bold red]")
+                continue
+            for tournament in tournaments:
+                if tournament["id"] == int(input_ID):
+                    return tournament["id"]
+            print("[bold red]Sorry there is no tournament with this ID[/bold red]")
+            continue
   

@@ -1,12 +1,8 @@
-import datetime
 from rich import print
-import subprocess
-import os
-import sys
 from utils import go_back_to_menu_or_exit_programme
 
 
-class View:
+class Games_view:
     @staticmethod
     def input_result(games):
         while True:
@@ -32,3 +28,14 @@ class View:
             except:
                 print("[bold red]Entrée invalide. Veuillez saisir 'closed' pour clôturer la manche ou un nombre valide.[/bold red]")
                 continue
+    
+    @staticmethod
+    def show_games(games, round_number):
+        print(f"Hello, here are the games for round n{round_number} :")
+        print("One you have entered all the scores next round will be launched : ")
+        i = 0
+        for game in games:
+            player_a_name = f"{game.player_a['first_name']} {game.player_a['last_name']}"
+            player_b_name = f"{game.player_b['first_name']} {game.player_b['last_name']}"
+            print(f"ID {i}:  [bold]{player_a_name}[/bold] VS [bold]{player_b_name}[/bold]")
+            i += 1

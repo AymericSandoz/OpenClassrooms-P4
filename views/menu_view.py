@@ -14,4 +14,4 @@ class Menu_view:
             if response not in ["1", "2", "3", "4", "5"]:
                 print("[bold red]Invalid answer[/bold red]")
                 continue
-            return response 
+            return response

@@ -1,5 +1,6 @@
 import json
 
+
 class Game:
     def __init__(self, player_a, player_b):
         self.player_a = player_a
@@ -43,12 +44,13 @@ class Game:
 
         player1 = game[0]['player1']
         player2 = game[1]['player2']
-
-        rounds['games'][gameId] = [{'player1': player1, 'score': score["score_a"]}, {'player2': player2, 'score': score["score_b"]}]
+        rounds['games'][gameId] = [
+            {'player1': player1, 'score': score["score_a"]},
+            {'player2': player2, 'score': score["score_b"]}
+        ]
 
         with open('data/tournaments.json', 'w') as file:
             json.dump(data, file, indent=4)
-
     
     def to_dict(self):
         return [{'player1': self.player_a, 'score': None}, {'player2': self.player_b, 'score': None}]

@@ -6,18 +6,17 @@ from datetime import datetime
 
 
 class Tournament:
-    def __init__(self, name, location, players=[], rounds=[], nb_rounds=4, description="tournoi d'échec",played_games=[], winners="unknown"):
+    def __init__(self, name, location):
         self.id = random.randint(1000000, 9999999)
         self.name = name
         self.location = location
         self.start_date = datetime.now()
-        self.players = players
-        self.rounds = rounds
-        self.nb_rounds = nb_rounds
-        self.description = description
-        self.played_games = played_games
+        self.players = []
+        self.rounds = []
+        self.nb_rounds = 4
+        self.played_games = []
         self.open_tournament()
-        self.winners = winners
+        self.winners = "unknown"
 
     def add_players(self, players):
         self.players += players
@@ -39,13 +38,12 @@ class Tournament:
     def open_tournament(self):
         with open("data/tournaments.json", "r") as f:
             data = json.load(f)
-            print(self.start_date) 
+            print(self.start_date)
             tournament_data = {
-                "id": self.id, 
+                "id": self.id,
                 "name": self.name,
-                "start date": self.start_date.strftime("%Y-%m-%d %H:%M:%S"),
-                "location": self.location,
-                "description": self.description
+                "start date": self.start_date.strftime("%Y-%m-%d %H:%M"),
+                "location": self.location
             }
             data["tournaments"].append(tournament_data)
         with open("data/tournaments.json", "w") as f:
@@ -53,7 +51,7 @@ class Tournament:
 
     def create_round(self):
         if len(self.rounds) < self.nb_rounds:
-            round = Round(f"{len(self.rounds) + 1}") 
+            round = Round(f"{len(self.rounds) + 1}")
             self.rounds.append(round)
             games = self.pair_players()
             round.add_games(games, self.id, len(self.rounds))
@@ -61,10 +59,10 @@ class Tournament:
     
     def close_round(self, round, round_number, result):
         if result == "closed":
-            round.close_round(self.id, round_number) 
+            round.close_round(self.id, round_number)
         else:
             score = Game.attribute_score(result["winner"])
-            Game.close_game(score, result["game_id"],  self.id, round_number) 
+            Game.close_game(score, result["game_id"], self.id, round_number)
     
     def actualise_players_score(self, round_number):
         """actualise players score after each round"""
@@ -99,14 +97,16 @@ class Tournament:
         with open("data/tournaments.json", "w") as json_file:
             json.dump(data, json_file)
 
-
     def check_if_game_already_occurred(self, player1, player2):
+        """check if a confrontation between two players already occured"""
         for round in self.rounds:
             for game in round.games:
-                if ((game.player_a["id"] == player1["id"] or game.player_a["id"] == player2["id"]) and (game.player_b["id"] == player1["id"] or game.player_b["id"] == player2["id"])):
+                is_player_a_match = game.player_a["id"] == player1["id"] or game.player_a["id"] == player2["id"]
+                is_player_b_match = game.player_b["id"] == player1["id"] or game.player_b["id"] == player2["id"]
+                if is_player_a_match and is_player_b_match:
                     print("TEST - La confrontation a déja eu lieu")
                     return True
-                else: 
+                else:
                     return False
 
     def pair_players(self):
@@ -116,7 +116,7 @@ class Tournament:
             self.shuffle_players()
             for i in range(0, len(self.players), 2):
                 player1 = self.players[i]
-                player2 = self.players[i+1]
+                player2 = self.players[i + 1]
                 games.append(Game(player1, player2))
         
         else:
@@ -170,15 +170,8 @@ class Tournament:
         for tournament in data['tournaments']:
 
             if tournament['id'] == self.id:
-                tournament['end_date'] = self.end_date
+                tournament['end_date'] = self.end_date.strftime("%Y-%m-%d %H:%M"),
                 break
 
         with open('data/tournaments.json', 'w') as file:
             json.dump(data, file, indent=4)
-
-
-    
-    
-
-        
-    

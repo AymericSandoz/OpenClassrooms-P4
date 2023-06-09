@@ -1,11 +1,12 @@
 from rich import print
 import re
 
-class Player_view:    
+
+class Player_view:
     @staticmethod
     def register_player():
-        "register_player_to_the_federation"
-        first_name = input("enter first name :") 
+        """register_player_to_the_federation"""
+        first_name = input("enter first name :")
         last_name = input("enter last name :")
         id = input("enter id :")
         date_of_birth = input("enter date of birth :")
@@ -13,7 +14,7 @@ class Player_view:
     
     @staticmethod
     def get_players(players_ids):
-        "register player to tournament"
+        """register player to tournament"""
         print("It's now time to register players")
         while True:
             print("[bold]Do you want to add manually players or choose a list of preregistered players?[/bold]")
@@ -36,7 +37,7 @@ class Player_view:
                     else:
                         players.append((id))
             elif reponse == "2":
-                players.extend(["YR27653", "YR34681", "DT91027", "TF52376", "CT83941", "KX57234", "LE65874", "ZD22348"])#permet d'ajouter les éléments directement dans la liste [] au lieu de les impriquer
+                players.extend(["YR27653", "YR34681", "DT91027", "TF52376", "CT83941", "KX57234", "LE65874", "ZD22348"])
             else:
                 print("[bold red]Invalid answer[/bold red]")
                 continue
@@ -45,25 +46,28 @@ class Player_view:
 
     @staticmethod
     def id_already_existing(id):
+        """show that a player with this id already exist"""
         print(f"[bold red]L'id {id} existe déjà.[/bold red]")
 
     @staticmethod
     def register_player_to_fd_success_message(first_name):
-        print(f"Le joueur [bold cyan]{first_name}[/bold cyan] a été ajouté avec succès.")
+        print(f"[bold cyan]{first_name}[/bold cyan] has been added with success.")
     
     @staticmethod
     def display_players(player_id, player_first_name, player_last_name, player_date_of_birth):
+        """display a player among all the player"""
         print("Player ID :", player_id)
         print("Name :", player_first_name, player_last_name)
         print("Date of birth :", player_date_of_birth)
-        print("[cyan]---------------------[/cyan]")    
+        print("[cyan]---------------------[/cyan]")
 
     @staticmethod
     def display_player(player, player_tournaments):
+        """display one specific player"""
         print("Player ID :", player["id"])
         print("Name :", player["first_name"], player["last_name"])
         print("Date of birth :", player["date_of_birth"])
-        print(f"Tournaments participated by the player: ")
+        print("Tournaments participated by the player: ")
         for tournament in player_tournaments:
             print(f"Tournament name: {tournament['tournament_name']}")
             print(f"Player's score: {tournament['score']}")

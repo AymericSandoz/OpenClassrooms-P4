@@ -1,6 +1,5 @@
-import datetime
 from rich import print
-from utils import go_back_to_menu_or_exit_programme
+
 
 class Tournament_view:
     
@@ -8,7 +7,6 @@ class Tournament_view:
     def intro_message():
         print("Hello, Welcome to our [bold cyan]tournament[/bold cyan]")
         print("The number of [bold cyan]players[/bold cyan] must be [bold cyan]even[/bold cyan]")
-
 
     @staticmethod
     def goodbye():
@@ -27,49 +25,25 @@ class Tournament_view:
         location = input("> ")
         print("Nice ! ")
         return location
-    
-    # @staticmethod
-    # def get_tournament_start_date():
-    #     while True:
-    #         try: 
-    #             start_date = datetime.datetime.strptime(input("When does it start ? (in DD/MM/YYYY)"),"%d/%m/%Y").date()
-    #             return start_date
-    #         except ValueError:
-    #             print("[bold red]Invalid answer[/bold red]")
-    #             continue
-        
-    
-    # @staticmethod
-    # def get_tournament_end_date(start_date):
-    #     while True:
-    #         try:
-    #             end_date = datetime.datetime.strptime(input("And when does it finish (in DD/MM/YYYY)? "),"%d/%m/%Y").date()
-    #             if (end_date >= start_date):
-    #                 print("perfect !")
-    #                 return start_date
-    #             else:
-    #                 print("[bold red]The end date has to be after the start date ![/bold red]")
-    #         except ValueError:
-    #             print("[bold red]Invalid answer[/bold red]")
-    #             continue
-  
+   
     @staticmethod
     def close_tournament(tournament_winners):
         print('[bold]Thanks, the tournament is over[bold]')
 
         if len(tournament_winners) == 1:
             winner = tournament_winners[0]
-            print(f"Congratulation to [bold cyan]{winner['first_name']} {winner['last_name']}[/bold cyan] who won the tournament with a score of {winner['score']}")
+            print(f"Congratulation to [bold cyan]{winner['first_name']} {winner['last_name']}[/bold cyan]"
+                  f"who won the tournament with a score of {winner['score']}")
         else:
             print("Congratulation to")
             for player in tournament_winners:
                 print(f"[bold cyan]{player['first_name']} {player['last_name']}[/bold cyan],")
             print(f"who won the tournament with a score of [bold cyan]{player['score']}[bold cyan]")
-    
+           
     @staticmethod
     def no_player_found(id):
-        print(f"[bold red]Aucun joueur avec l'ID {id} n'a été trouvé.[/bold red]")
-    
+        print(f"[bold red]No player with the id {id} has been found.[/bold red]")
+
     @staticmethod
     def display_tournament(tournament):
         print("Tournament Name:", tournament["name"])
@@ -117,4 +91,3 @@ class Tournament_view:
                     return tournament["id"]
             print("[bold red]Sorry there is no tournament with this ID[/bold red]")
             continue
-  

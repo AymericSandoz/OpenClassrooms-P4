@@ -1,6 +1,7 @@
 import json
 from datetime import datetime
 
+
 class Round:
     def __init__(self, name, closed=False):
         self.name = name
@@ -13,13 +14,26 @@ class Round:
         with open('data/tournaments.json') as file:
             data = json.load(file)
 
-        tournament = next((t for t in data['tournaments'] if t['id'] == tournamentId), None)#pas compris pourquoi, #chatgpt //  rechercher un tournoi spécifique dans la liste  data['tournaments'].
-        #next() est une fonction qui retourne le prochain élément d'un itérable qui répond à une condition donnée. Dans ce cas, il retourne le premier tournoi qui correspond à la condition t['id'] == tournamentId.
+        tournament = next((t for t in data['tournaments'] if t['id'] == tournamentId), None)
         if tournament:
             if round_number == 1:
-                tournament['rounds'] = [{"start_date" : self.start_date.strftime("%Y-%m-%d %H:%M"), "games" : [game.to_dict() for game in games], "round_number" : round_number, "closed" : False}]
+                tournament['rounds'] = [
+                    {
+                        "start_date": self.start_date.strftime("%Y-%m-%d %H:%M"),
+                        "games": [game.to_dict() for game in games],
+                        "round_number": round_number,
+                        "closed": False
+                    }
+                ]
             else:
-                tournament['rounds'].append({"start_date" : self.start_date.strftime("%Y-%m-%d %H:%M"), "games" : [game.to_dict() for game in games], "round_number" : round_number, "closed" : False})
+                tournament['rounds'].append(
+                    {
+                        "start_date": self.start_date.strftime("%Y-%m-%d %H:%M"),
+                        "games": [game.to_dict() for game in games],
+                        "round_number": round_number,
+                        "closed": False
+                    }
+                )
             for t in data['tournaments']:
                 if t['id'] == tournamentId:
                     t = tournament
@@ -46,13 +60,7 @@ class Round:
                     self.closed = False
                     break
         if self.closed is True:
-            rounds[round_number-1]["closed"] = True
-            rounds[round_number-1]["end_date"] = self.end_date.strftime("%Y-%m-%d %H:%M")
+            rounds[round_number - 1]["closed"] = True
+            rounds[round_number - 1]["end_date"] = self.end_date.strftime("%Y-%m-%d %H:%M")
             with open("data/tournaments.json", "w") as json_file:
                 json.dump(data, json_file)
-
-
- 
-
-
-

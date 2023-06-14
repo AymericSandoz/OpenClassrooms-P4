@@ -31,7 +31,7 @@ class Tournament:
             if tournament["name"] == self.name:
                 tournament.update({"players": self.players})
                 break
-            
+
         with open("data/tournaments.json", "w") as f:
             json.dump(data, f)
 
@@ -56,14 +56,14 @@ class Tournament:
             games = self.pair_players()
             round.add_games(games, self.id, len(self.rounds))
             return round
-    
+
     def close_round(self, round, round_number, result):
         if result == "closed":
             round.close_round(self.id, round_number)
         else:
             score = Game.attribute_score(result["winner"])
             Game.close_game(score, result["game_id"], self.id, round_number)
-    
+
     def actualise_players_score(self, round_number):
         """actualise players score after each round"""
         with open('data/tournaments.json') as file:
@@ -87,13 +87,13 @@ class Tournament:
                     player["score"] = player.get("score", 0) + score1
                 elif player["id"] == player2["id"]:
                     player["score"] = player.get("score", 0) + score2
-            
+
             for player in self.players:
                 if player["id"] == player1["id"]:
                     player["score"] = player.get("score", 0) + score1
                 elif player["id"] == player2["id"]:
                     player["score"] = player.get("score", 0) + score2
-        
+
         with open("data/tournaments.json", "w") as json_file:
             json.dump(data, json_file)
 
@@ -118,7 +118,7 @@ class Tournament:
                 player1 = self.players[i]
                 player2 = self.players[i + 1]
                 games.append(Game(player1, player2))
-        
+
         else:
             sorted_players = sorted(self.players, key=lambda player: player["score"], reverse=True)
             player_index = 1
@@ -130,7 +130,7 @@ class Tournament:
                     del sorted_players[player_index]
                     del sorted_players[0]
                     player_index = 1
-                
+
                 else:
                     player_index = player_index + 1
                     if player_index == len(sorted_players) - 1:
@@ -140,11 +140,11 @@ class Tournament:
                         del sorted_players[player_index]
                         del sorted_players[0]
         return games
-    
+
     def shuffle_players(self):
         """shuffle player randomly"""
         random.shuffle(self.players)
-     
+
     def get_and_save_winners(self):
         """return tournament winner/s """
         sorted_players = sorted(self.players, key=lambda player: player["score"], reverse=True)
@@ -162,7 +162,7 @@ class Tournament:
             json.dump(data, file, indent=4)
 
         return winners
-    
+
     def close_tournament(self):
         self.end_date = datetime.now()
         with open('data/tournaments.json', 'r') as file:

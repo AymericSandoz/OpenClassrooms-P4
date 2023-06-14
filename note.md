@@ -51,8 +51,16 @@ RIch
 
 4- Tuto Git ! PAsser de commit sans avoir peur de tout casser.
 
-
 15/06
 Entrer end date à la fin d'un tournoi automatiuement
 
-Lors de l'enregistrment de joeur à la fédé checker les input ID et 
+Lors de l'enregistrment de joeur à la fédé checker les input ID et
+
+#ligne de commande pour générer le rapport flake 8 :
+flake8 --format=html --htmldir=flake-report main.py utils.py models/game.py models/player.py models/tournament.py models/round.py views/menu_view.py views/players_view.py views/games_view.py views/tournaments_view.py controllers/menu_controller.py controllers/player_controller.py controllers/tournament_controller.py
+
+## Pas terminé :
+
+Vérifier la fonction qui génère les matchs :
+
+Vérifier qu'il y'a au moins 8 joeurs dans le tournoi lors d el'inscription de sjoeurs

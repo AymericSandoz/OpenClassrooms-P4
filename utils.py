@@ -2,14 +2,16 @@ import os
 import sys
 import json
 
+
 def go_back_to_menu_or_exit_programme(user_input):
     if user_input.lower() == "menu":
-        os.system('cls' if os.name == 'nt' else 'clear') 
+        os.system('cls' if os.name == 'nt' else 'clear')
         return 'menu'
 
     if user_input.lower() == "exit":
         os.system('cls' if os.name == 'nt' else 'clear')
         sys.exit()
+
 
 def search_tournaments_by_player(player_id):
     with open('data/tournaments.json', 'r') as file:

@@ -25,16 +25,16 @@ class Games_view:
                         print("[bold red]Entrée invalides, vous devez saisir A,B ou D[/bold red]")
                         continue
                     return {"winner": winner, "game_id": game_id}
-        
+
                 else:
                     print("[bold red]Entrée invalide."
                           "Veuillez saisir 'closed' pour clôturer la manche ou un nombre valide.[/bold red]")
                     continue
-            except:
+            except ValueError:
                 print("[bold red]Entrée invalide."
                       "Veuillez saisir 'closed' pour clôturer la manche ou un nombre valide.[/bold red]")
                 continue
-    
+
     @staticmethod
     def show_games(games, round_number):
         print(f"Hello, here are the games for round n{round_number} :")

@@ -11,7 +11,7 @@ class Player_view:
         id = input("enter id :")
         date_of_birth = input("enter date of birth :")
         return {"first_name": first_name, "last_name": last_name, "id": id, "date_of_birth": date_of_birth}
-    
+
     @staticmethod
     def get_players(players_ids):
         """register player to tournament"""
@@ -37,11 +37,12 @@ class Player_view:
                     else:
                         players.append((id))
             elif reponse == "2":
-                players.extend(["YR27653", "YR34681", "DT91027", "TF52376", "CT83941", "KX57234", "LE65874", "ZD22348"])
+                players.extend(["YR27653", "YR34681", "DT91027", "TF52376",
+                                "CT83941", "KX57234", "LE65874", "ZD22348"])
             else:
                 print("[bold red]Invalid answer[/bold red]")
                 continue
-            
+
             return players
 
     @staticmethod
@@ -52,7 +53,7 @@ class Player_view:
     @staticmethod
     def register_player_to_fd_success_message(first_name):
         print(f"[bold cyan]{first_name}[/bold cyan] has been added with success.")
-    
+
     @staticmethod
     def display_players(player_id, player_first_name, player_last_name, player_date_of_birth):
         """display a player among all the player"""
@@ -73,7 +74,7 @@ class Player_view:
             print(f"Player's score: {tournament['score']}")
             print('[cyan]---[/cyan]')
         print("[cyan]---------------------[/cyan]")
-    
+
     @staticmethod
     def get_player_id(players):
         while True:

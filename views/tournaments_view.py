@@ -2,7 +2,6 @@ from rich import print
 
 
 class Tournament_view:
-    
     @staticmethod
     def intro_message():
         print("Hello, Welcome to our [bold cyan]tournament[/bold cyan]")
@@ -18,14 +17,14 @@ class Tournament_view:
         name = input("> ")
         print(f"[bold cyan]{name}[/bold cyan] ? That's an excellent name")
         return name
-    
+
     @staticmethod
     def get_tournament_location():
         print("Where will the [bold cyan]tournament[/bold cyan] be held ?")
         location = input("> ")
         print("Nice ! ")
         return location
-   
+
     @staticmethod
     def close_tournament(tournament_winners):
         print('[bold]Thanks, the tournament is over[bold]')
@@ -39,7 +38,7 @@ class Tournament_view:
             for player in tournament_winners:
                 print(f"[bold cyan]{player['first_name']} {player['last_name']}[/bold cyan],")
             print(f"who won the tournament with a score of [bold cyan]{player['score']}[bold cyan]")
-           
+
     @staticmethod
     def no_player_found(id):
         print(f"[bold red]No player with the id {id} has been found.[/bold red]")
@@ -62,7 +61,7 @@ class Tournament_view:
                 print(player1["first_name"], player1["last_name"], "vs", player2["first_name"], player2["last_name"])
                 print("Score:", game[0]["score"], "-", game[1]["score"])
                 print("[bold]---------------------[/bold]")
-    
+
     @staticmethod
     def display_tournaments(tournament_id, tournament_name, start_date, end_date, winners):
         print("Tournament ID:", tournament_id)
@@ -76,7 +75,7 @@ class Tournament_view:
         elif winners != []:
             print("Winners:", winners[0]["first_name"], " ", winners[0]["last_name"])
         print("[cyan]---------------------[cyan]")
-    
+
     @staticmethod
     def get_tournament_id(tournaments):
         while True:

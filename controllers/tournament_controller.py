@@ -6,35 +6,33 @@ import json
 
 
 class Tournament_controller:
-    
+
     @staticmethod
     def launch_tournament():
         Tournament_view.intro_message()
         name = Tournament_view.get_tournament_name()
         location = Tournament_view.get_tournament_location()
-        # start_date = Tournament_view.get_tournament_start_date()
-        # end_date = Tournament_view.get_tournament_end_date(start_date)
         tournament = Tournament(name, location)
 
         with open("data/players.json", 'r') as file:
             players = json.load(file)["players"]
             ids = [p["id"] for p in players]
-            
+
         players = Player_view.get_players(ids)
         tournament.add_players(players)
 
         for i in range(tournament.nb_rounds):
-            round = tournament.create_round() #attention ensuite il faut que les dates se remplisse automatiquement mais pas bien compris comment ? Est ce qu'il faut que la date du jour soit uatomatiquement utilisée comme start_date 
+            round = tournament.create_round()
             while not round.closed:
                 Games_view.show_games(round.games, i)
                 result = Games_view.input_result(round.games)
                 tournament.close_round(round, i, result)
             tournament.actualise_players_score(i)
-        
+
         tournament_winners = tournament.get_and_save_winners()
         tournament.close_tournament()
         Tournament_view.close_tournament(tournament_winners)
-    
+
     @staticmethod
     def display_tournaments():
         with open('data/tournaments.json') as file:
@@ -47,8 +45,9 @@ class Tournament_controller:
             end_date = tournament.get('end date', 'N/A')
             winners = tournament.get('winners', [])
 
-            Tournament_view.display_tournaments(tournament_id, tournament_name, start_date, end_date, winners)
-     
+            Tournament_view.display_tournaments(tournament_id, tournament_name,
+                                                start_date, end_date, winners)
+
     @staticmethod
     def display_tournament():
         with open("data/tournaments.json") as file:
@@ -56,7 +55,7 @@ class Tournament_controller:
         tournaments = data["tournaments"]
         tournament_id = Tournament_view.get_tournament_id(tournaments)
         if tournament_id == "menu":
-            return 
+            return
         for tournament in tournaments:
             if tournament["id"] == tournament_id:
                 target_tournament = tournament

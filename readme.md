@@ -28,7 +28,7 @@ python main.py
 
 ### Rapport flake 8
 
-Il est possible de générer un rapport flake8 en utilisant la comande suivante :
+Il est possible de générer un rapport flake8 en utilisant la comande suivante à la racine du projet :
 
 ```shell
 flake8 --format=html --htmldir=flake-report main.py utils.py models/game.py models/player.py models/tournament.py models/round.py views/menu_view.py views/players_view.py views/games_view.py views/tournaments_view.py controllers/menu_controller.py controllers/player_controller.py controllers/tournament_controller.py

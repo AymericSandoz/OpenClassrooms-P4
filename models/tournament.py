@@ -19,6 +19,7 @@ class Tournament:
         self.winners = "unknown"
 
     def add_players(self, players):
+        """add players to the tournament. Players needs to be registered to the federation"""
         self.players += players
         with open("data/players.json", 'r') as f:
             all_players = json.load(f)["players"]
@@ -36,9 +37,9 @@ class Tournament:
             json.dump(data, f)
 
     def open_tournament(self):
+        """open a tournament"""
         with open("data/tournaments.json", "r") as f:
             data = json.load(f)
-            print(self.start_date)
             tournament_data = {
                 "id": self.id,
                 "name": self.name,
@@ -50,6 +51,7 @@ class Tournament:
             json.dump(data, f)
 
     def create_round(self):
+        """create  a round with all games"""
         if len(self.rounds) < self.nb_rounds:
             round = Round(f"{len(self.rounds) + 1}")
             self.rounds.append(round)
@@ -58,6 +60,7 @@ class Tournament:
             return round
 
     def close_round(self, round, round_number, result):
+        """close a round"""
         if result == "closed":
             round.close_round(self.id, round_number)
         else:
@@ -104,13 +107,12 @@ class Tournament:
                 is_player_a_match = game.player_a["id"] == player1["id"] or game.player_a["id"] == player2["id"]
                 is_player_b_match = game.player_b["id"] == player1["id"] or game.player_b["id"] == player2["id"]
                 if is_player_a_match and is_player_b_match:
-                    print("TEST - La confrontation a déja eu lieu")
                     return True
                 else:
                     return False
 
     def pair_players(self):
-        """return list of games"""
+        """return a list of games"""
         games = []
         if len(self.rounds) == 1:
             self.shuffle_players()
@@ -164,6 +166,7 @@ class Tournament:
         return winners
 
     def close_tournament(self):
+        "close a tournament and enter end date"
         self.end_date = datetime.now()
         with open('data/tournaments.json', 'r') as file:
             data = json.load(file)

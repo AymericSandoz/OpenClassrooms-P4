@@ -10,6 +10,7 @@ class Game:
 
     @staticmethod
     def attribute_score(result):
+        """return a player score relative to the game result"""
         if result == "A":
             score_a = 1
             score_b = 0
@@ -30,6 +31,7 @@ class Game:
 
     @staticmethod
     def close_game(score, gameId, tournamentId, round_number):
+        """close a game"""
         with open('data/tournaments.json') as file:
             data = json.load(file)
 

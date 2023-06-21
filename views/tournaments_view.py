@@ -32,19 +32,21 @@ class Tournament_view:
         if len(tournament_winners) == 1:
             winner = tournament_winners[0]
             print(f"Congratulation to [bold cyan]{winner['first_name']} {winner['last_name']}[/bold cyan]"
-                  f"who won the tournament with a score of {winner['score']}")
+                  f" who won the tournament with a score of {winner['score']}")
         else:
             print("Congratulation to")
             for player in tournament_winners:
                 print(f"[bold cyan]{player['first_name']} {player['last_name']}[/bold cyan],")
-            print(f"who won the tournament with a score of [bold cyan]{player['score']}[bold cyan]")
+            print(f" who won the tournament with a score of [bold cyan]{player['score']}[bold cyan]")
 
     @staticmethod
     def no_player_found(id):
+        """indicate that no player with this ID ine the federation has been found"""
         print(f"[bold red]No player with the id {id} has been found.[/bold red]")
 
     @staticmethod
     def display_tournament(tournament):
+        """display one tournament"""
         print("Tournament Name:", tournament["name"])
         print("Start Date:", tournament["start date"])
         print("Location:", tournament["location"])
@@ -64,6 +66,7 @@ class Tournament_view:
 
     @staticmethod
     def display_tournaments(tournament_id, tournament_name, start_date, end_date, winners):
+        """display oe tournament in a list of tournaments"""
         print("Tournament ID:", tournament_id)
         print("Name:", tournament_name)
         print("Start Date:", start_date)

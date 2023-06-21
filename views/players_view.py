@@ -1,16 +1,23 @@
 from rich import print
 import re
+from datetime import datetime
 
 
 class Player_view:
     @staticmethod
     def register_player():
         """register_player_to_the_federation"""
-        first_name = input("enter first name :")
-        last_name = input("enter last name :")
-        id = input("enter id :")
-        date_of_birth = input("enter date of birth :")
-        return {"first_name": first_name, "last_name": last_name, "id": id, "date_of_birth": date_of_birth}
+        first_name = input("Enter first name: ")
+        last_name = input("Enter last name: ")
+        while True:
+            date_str = input("Enter date of birth (YYYY-MM-DD): ")
+            try:
+                date_of_birth = datetime.strptime(date_str, "%Y-%m-%d").date()
+                break  # Break out of the loop if the date is valid
+            except ValueError:
+                print("Invalid date format. Please enter the date in YYYY-MM-DD format.")
+
+        return {"first_name": first_name, "last_name": last_name, "date_of_birth": date_of_birth}
 
     @staticmethod
     def get_players(players_ids):
@@ -77,6 +84,7 @@ class Player_view:
 
     @staticmethod
     def get_player_id(players):
+        """get a valid player ID"""
         while True:
             input_ID = input("Please if your want more information on a player, enter it's ID:")
             if input_ID == "menu" or input_ID == "Menu":

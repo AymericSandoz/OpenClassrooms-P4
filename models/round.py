@@ -10,10 +10,11 @@ class Round:
         self.closed = closed
 
     def add_games(self, games, tournamentId, round_number):
+        """add games to the round"""
         self.games = games
         with open('data/tournaments.json') as file:
             data = json.load(file)
-
+        # searches for a tournament in a collection of tournaments based on a specific tournament ID
         tournament = next((t for t in data['tournaments'] if t['id'] == tournamentId), None)
         if tournament:
             if round_number == 1:
@@ -42,6 +43,7 @@ class Round:
                 json.dump(data, file, indent=4)
 
     def close_round(self, tournamentId, round_number):
+        """closed round and enter close date"""
         self.end_date = datetime.now()
         self.closed = True
         with open('data/tournaments.json') as file:

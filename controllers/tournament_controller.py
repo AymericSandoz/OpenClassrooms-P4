@@ -9,6 +9,7 @@ class Tournament_controller:
 
     @staticmethod
     def launch_tournament():
+        "execute a tournament from the start to the end"
         Tournament_view.intro_message()
         name = Tournament_view.get_tournament_name()
         location = Tournament_view.get_tournament_location()
@@ -35,6 +36,7 @@ class Tournament_controller:
 
     @staticmethod
     def display_tournaments():
+        "display a list of all the tournaments"
         with open('data/tournaments.json') as file:
             data = json.load(file)
         tournaments = data['tournaments']
@@ -50,6 +52,7 @@ class Tournament_controller:
 
     @staticmethod
     def display_tournament():
+        "display one tournament"
         with open("data/tournaments.json") as file:
             data = json.load(file)
         tournaments = data["tournaments"]

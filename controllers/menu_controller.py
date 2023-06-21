@@ -1,6 +1,8 @@
 from views.menu_view import Menu_view
 from controllers.tournament_controller import Tournament_controller
 from controllers.player_controller import Player_controller
+import os
+import sys
 
 
 class Menu_controller:
@@ -23,3 +25,9 @@ class Menu_controller:
                 Player_controller.display_players()
                 Player_controller.display_player()
                 continue
+            elif menu_choice == "5":
+                os.system('cls')
+                sys.exit()
+
+
+

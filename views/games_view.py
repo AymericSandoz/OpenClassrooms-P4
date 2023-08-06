@@ -29,11 +29,11 @@ class Games_view:
 
                 else:
                     print("[bold red]Invalid input."
-                          "Please enter 'closed' to close the round or choose valid number.[/bold red]")
+                          "Please enter 'closed' to close the round or choose a valid number.[/bold red]")
                     continue
             except ValueError:
                 print("[bold red]Invalid input."
-                      "Please enter 'closed' to close the round or choose valid number.[/bold red]")
+                      "Please enter 'closed' to close the round or choose a valid number.[/bold red]")
                 continue
 
     @staticmethod

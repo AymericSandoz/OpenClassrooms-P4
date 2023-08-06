@@ -33,7 +33,9 @@ class Player_view:
                 while True:
                     id = input("Please enter player's id. (or enter 'exit' to stop) : ")
                     if id == "exit":
-                        if len(players) % 2 == 0:
+                        if len(players) < 4:
+                            print("There must be at least 4 players")
+                        elif len(players) % 2 == 0:
                             break
                         else:
                             print("The number of player must be even")

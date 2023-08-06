@@ -1,4 +1,5 @@
 from models.tournament import Tournament
+from models.game import Game
 from views.tournaments_view import Tournament_view
 from views.players_view import Player_view
 from views.games_view import Games_view
@@ -22,13 +23,20 @@ class Tournament_controller:
         players = Player_view.get_players(ids)
         tournament.add_players(players)
 
-        for i in range(tournament.nb_rounds):
+        for round_number in range(tournament.nb_rounds):
             round = tournament.create_round()
             while not round.closed:
-                Games_view.show_games(round.games, i)
+                Games_view.show_games(round.games, round_number)
                 result = Games_view.input_result(round.games)
-                tournament.close_round(round, i, result)
-            tournament.actualise_players_score(i)
+                if result == "closed":
+                    if round.close_round(tournament.id, round_number) is False:
+                        Games_view.enter_all_games()
+
+                else:
+                    score = Game.attribute_score(result["winner"])
+                    Game.close_game(score, result["game_id"], tournament.id, round_number)
+
+            tournament.actualise_players_score(round_number)
 
         tournament_winners = tournament.get_and_save_winners()
         tournament.close_tournament()

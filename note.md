@@ -64,3 +64,17 @@ flake8 --format=html --htmldir=flake-report main.py utils.py models/game.py mode
 Vérifier la fonction qui génère les matchs :
 
 Vérifier qu'il y'a au moins 8 joeurs dans le tournoi lors d el'inscription de sjoeurs
+
+
+##### Test codings games
+
+@Property
+
+__str__
+__str__ est une méthode spéciale qui définit la représentation sous forme de chaîne de caractères d'un objet.
+
+
+*args : C'est une syntaxe utilisée pour passer un nombre variable d'arguments non-clé à une fonction. L'étoile (*) avant le paramètre args permet d'indiquer que tous les arguments positionnels supplémentaires doivent être collectés dans un tuple
+
+kwargs
+

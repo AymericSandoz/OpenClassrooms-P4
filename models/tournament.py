@@ -173,7 +173,7 @@ class Tournament:
         for tournament in data['tournaments']:
 
             if tournament['id'] == self.id:
-                tournament['end_date'] = self.end_date.strftime("%Y-%m-%d %H:%M"),
+                tournament['end date'] = self.end_date.strftime("%Y-%m-%d %H:%M"),
                 break
 
         with open('data/tournaments.json', 'w') as file:

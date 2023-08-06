@@ -39,7 +39,7 @@ class Games_view:
     @staticmethod
     def show_games(games, round_number):
         "display all the games of one specific round"
-        print(f"Hello, here are the games for round n{round_number} :")
+        print(f"Hello, here are the games for [bold cyan]round n{round_number} :[/bold cyan]")
         print("One you have entered all the scores next round will be launched : ")
         i = 0
         for game in games:
@@ -47,3 +47,7 @@ class Games_view:
             player_b_name = f"{game.player_b['first_name']} {game.player_b['last_name']}"
             print(f"ID {i}:  [bold]{player_a_name}[/bold] VS [bold]{player_b_name}[/bold]")
             i += 1
+
+    @staticmethod
+    def enter_all_games():
+        print("[bold red]Please complete each games before closing a round [/bold red]")

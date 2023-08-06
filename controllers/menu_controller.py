@@ -28,6 +28,3 @@ class Menu_controller:
             elif menu_choice == "5":
                 os.system('cls')
                 sys.exit()
-
-
-

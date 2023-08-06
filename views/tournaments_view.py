@@ -50,7 +50,6 @@ class Tournament_view:
         print("Tournament Name:", tournament["name"])
         print("Start Date:", tournament["start date"])
         print("Location:", tournament["location"])
-        print("Description:", tournament["description"])
         print("Players:")
         for player in tournament["players"]:
             print(player["first_name"], player["last_name"], "ID:", player["id"])

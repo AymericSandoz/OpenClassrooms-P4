@@ -43,7 +43,7 @@ class Round:
                 json.dump(data, file, indent=4)
 
     def close_round(self, tournamentId, round_number):
-        """closed round and enter close date"""
+        """closed round and enter close date. If all round score have not been entered return False"""
         self.end_date = datetime.now()
         self.closed = True
         with open('data/tournaments.json') as file:
@@ -61,8 +61,12 @@ class Round:
                 if player['score'] is None:
                     self.closed = False
                     break
+
         if self.closed is True:
             rounds[round_number - 1]["closed"] = True
             rounds[round_number - 1]["end_date"] = self.end_date.strftime("%Y-%m-%d %H:%M")
             with open("data/tournaments.json", "w") as json_file:
                 json.dump(data, json_file)
+
+        else:
+            return False

@@ -21,7 +21,8 @@ class Player_controller:
         """display a list of all the players"""
         with open('data/players.json') as file:
             data = json.load(file)
-        players = data['players']
+        players = data["players"]
+        players.sort(key=lambda x: x["last_name"])
         for player in players:
             player_id = player.get('id', 'N/A')
             player_first_name = player.get('first_name', 'N/A')

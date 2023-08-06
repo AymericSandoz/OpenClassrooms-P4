@@ -70,4 +70,7 @@ class Tournament_controller:
         for tournament in tournaments:
             if tournament["id"] == tournament_id:
                 target_tournament = tournament
+
+        target_tournament["players"].sort(key=lambda x: x["last_name"])
+
         Tournament_view.display_tournament(target_tournament)

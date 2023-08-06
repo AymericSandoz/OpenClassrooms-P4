@@ -1,74 +1,79 @@
 {
     "tournaments": [
         {
-            "id": 2506018,
-            "name": "test",
-            "start date": "2023-08-06 14:44",
-            "location": "test",
-            "players": [],
-            "rounds": [
-                {
-                    "start_date": "2023-08-06 14:45",
-                    "games": [],
-                    "round_number": 1,
-                    "closed": false
-                }
-            ]
-        },
-        {
-            "id": 1320394,
-            "name": "t",
-            "start date": "2023-08-06 14:46",
-            "location": "t",
+            "id": 7284584,
+            "name": "u-21",
+            "start date": "2023-08-06 23:18",
+            "location": "londres",
             "players": [
                 {
                     "last_name": "Olivia",
                     "first_name": "Jenki",
                     "date_of_birth": "1990-14-04",
-                    "id": "ZD22348"
+                    "id": "ZD22348",
+                    "score": 3.5
                 },
                 {
                     "last_name": "Ryder",
                     "first_name": "Riva",
                     "date_of_birth": "1990-14-12",
-                    "id": "LE65874"
+                    "id": "LE65874",
+                    "score": 1.5
+                },
+                {
+                    "last_name": "Dupont",
+                    "first_name": "Jean",
+                    "date_of_birth": "1990-05-12",
+                    "id": "YR27653",
+                    "score": 1.0
                 },
                 {
                     "last_name": "Martin",
                     "first_name": "Sophie",
                     "date_of_birth": "1998-02-28",
-                    "id": "YR34681"
+                    "id": "YR34681",
+                    "score": 2.0
                 },
                 {
                     "last_name": "Garcia",
                     "first_name": "Pablo",
                     "date_of_birth": "1987-07-19",
-                    "id": "DT91027"
+                    "id": "DT91027",
+                    "score": 1.5
                 },
                 {
-                    "first_name": "menu",
-                    "last_name": "menu",
-                    "id": "GC26903",
-                    "date_of_birth": "10/10/1555"
+                    "last_name": "Lefebvre",
+                    "first_name": "Camille",
+                    "date_of_birth": "2000-01-03",
+                    "id": "TF52376",
+                    "score": 2.0
                 },
                 {
-                    "first_name": "AYMERIC",
-                    "last_name": "SANDOZ",
-                    "id": "SV38248",
-                    "date_of_birth": "10/14/1888"
+                    "last_name": "Nguyen",
+                    "first_name": "Thierry",
+                    "date_of_birth": "1985-11-11",
+                    "id": "CT83941",
+                    "score": 2.5
+                },
+                {
+                    "last_name": "Moreau",
+                    "first_name": "Luc",
+                    "date_of_birth": "1984-04-22",
+                    "id": "KX57234",
+                    "score": 2.0
                 }
             ],
             "rounds": [
                 {
-                    "start_date": "2023-08-06 14:48",
+                    "start_date": "2023-08-06 23:18",
                     "games": [
                         [
                             {
                                 "player1": {
-                                    "last_name": "Ryder",
-                                    "first_name": "Riva",
-                                    "date_of_birth": "1990-14-12",
-                                    "id": "LE65874"
+                                    "last_name": "Olivia",
+                                    "first_name": "Jenki",
+                                    "date_of_birth": "1990-14-04",
+                                    "id": "ZD22348"
                                 },
                                 "score": 1
                             },
@@ -85,10 +90,30 @@
                         [
                             {
                                 "player1": {
-                                    "last_name": "Olivia",
-                                    "first_name": "Jenki",
-                                    "date_of_birth": "1990-14-04",
-                                    "id": "ZD22348"
+                                    "last_name": "Nguyen",
+                                    "first_name": "Thierry",
+                                    "date_of_birth": "1985-11-11",
+                                    "id": "CT83941"
+                                },
+                                "score": 1
+                            },
+                            {
+                                "player2": {
+                                    "last_name": "Ryder",
+                                    "first_name": "Riva",
+                                    "date_of_birth": "1990-14-12",
+                                    "id": "LE65874"
+                                },
+                                "score": 0
+                            }
+                        ],
+                        [
+                            {
+                                "player1": {
+                                    "last_name": "Dupont",
+                                    "first_name": "Jean",
+                                    "date_of_birth": "1990-05-12",
+                                    "id": "YR27653"
                                 },
                                 "score": 0.5
                             },
@@ -105,27 +130,327 @@
                         [
                             {
                                 "player1": {
-                                    "first_name": "menu",
-                                    "last_name": "menu",
-                                    "id": "GC26903",
-                                    "date_of_birth": "10/10/1555"
+                                    "last_name": "Lefebvre",
+                                    "first_name": "Camille",
+                                    "date_of_birth": "2000-01-03",
+                                    "id": "TF52376"
+                                },
+                                "score": 0
+                            },
+                            {
+                                "player2": {
+                                    "last_name": "Moreau",
+                                    "first_name": "Luc",
+                                    "date_of_birth": "1984-04-22",
+                                    "id": "KX57234"
+                                },
+                                "score": 1
+                            }
+                        ]
+                    ],
+                    "round_number": 1,
+                    "closed": true,
+                    "end_date": "2023-08-06 23:19"
+                },
+                {
+                    "start_date": "2023-08-06 23:18",
+                    "games": [
+                        [
+                            {
+                                "player1": {
+                                    "last_name": "Olivia",
+                                    "first_name": "Jenki",
+                                    "date_of_birth": "1990-14-04",
+                                    "id": "ZD22348",
+                                    "score": 1
+                                },
+                                "score": 1
+                            },
+                            {
+                                "player2": {
+                                    "last_name": "Nguyen",
+                                    "first_name": "Thierry",
+                                    "date_of_birth": "1985-11-11",
+                                    "id": "CT83941",
+                                    "score": 1
+                                },
+                                "score": 0
+                            }
+                        ],
+                        [
+                            {
+                                "player1": {
+                                    "last_name": "Moreau",
+                                    "first_name": "Luc",
+                                    "date_of_birth": "1984-04-22",
+                                    "id": "KX57234",
+                                    "score": 1
                                 },
                                 "score": 0.5
                             },
                             {
                                 "player2": {
-                                    "first_name": "AYMERIC",
-                                    "last_name": "SANDOZ",
-                                    "id": "SV38248",
-                                    "date_of_birth": "10/14/1888"
+                                    "last_name": "Dupont",
+                                    "first_name": "Jean",
+                                    "date_of_birth": "1990-05-12",
+                                    "id": "YR27653",
+                                    "score": 0.5
+                                },
+                                "score": 0.5
+                            }
+                        ],
+                        [
+                            {
+                                "player1": {
+                                    "last_name": "Martin",
+                                    "first_name": "Sophie",
+                                    "date_of_birth": "1998-02-28",
+                                    "id": "YR34681",
+                                    "score": 0.5
+                                },
+                                "score": 0.5
+                            },
+                            {
+                                "player2": {
+                                    "last_name": "Garcia",
+                                    "first_name": "Pablo",
+                                    "date_of_birth": "1987-07-19",
+                                    "id": "DT91027",
+                                    "score": 0
+                                },
+                                "score": 0.5
+                            }
+                        ],
+                        [
+                            {
+                                "player1": {
+                                    "last_name": "Ryder",
+                                    "first_name": "Riva",
+                                    "date_of_birth": "1990-14-12",
+                                    "id": "LE65874",
+                                    "score": 0
+                                },
+                                "score": 0.5
+                            },
+                            {
+                                "player2": {
+                                    "last_name": "Lefebvre",
+                                    "first_name": "Camille",
+                                    "date_of_birth": "2000-01-03",
+                                    "id": "TF52376",
+                                    "score": 0
                                 },
                                 "score": 0.5
                             }
                         ]
                     ],
-                    "round_number": 1,
+                    "round_number": 2,
+                    "closed": true,
+                    "end_date": "2023-08-06 23:19"
+                },
+                {
+                    "start_date": "2023-08-06 23:19",
+                    "games": [
+                        [
+                            {
+                                "player1": {
+                                    "last_name": "Olivia",
+                                    "first_name": "Jenki",
+                                    "date_of_birth": "1990-14-04",
+                                    "id": "ZD22348",
+                                    "score": 2
+                                },
+                                "score": 1
+                            },
+                            {
+                                "player2": {
+                                    "last_name": "Moreau",
+                                    "first_name": "Luc",
+                                    "date_of_birth": "1984-04-22",
+                                    "id": "KX57234",
+                                    "score": 1.5
+                                },
+                                "score": 0
+                            }
+                        ],
+                        [
+                            {
+                                "player1": {
+                                    "last_name": "Nguyen",
+                                    "first_name": "Thierry",
+                                    "date_of_birth": "1985-11-11",
+                                    "id": "CT83941",
+                                    "score": 1
+                                },
+                                "score": 1
+                            },
+                            {
+                                "player2": {
+                                    "last_name": "Dupont",
+                                    "first_name": "Jean",
+                                    "date_of_birth": "1990-05-12",
+                                    "id": "YR27653",
+                                    "score": 1.0
+                                },
+                                "score": 0
+                            }
+                        ],
+                        [
+                            {
+                                "player1": {
+                                    "last_name": "Martin",
+                                    "first_name": "Sophie",
+                                    "date_of_birth": "1998-02-28",
+                                    "id": "YR34681",
+                                    "score": 1.0
+                                },
+                                "score": 0.5
+                            },
+                            {
+                                "player2": {
+                                    "last_name": "Garcia",
+                                    "first_name": "Pablo",
+                                    "date_of_birth": "1987-07-19",
+                                    "id": "DT91027",
+                                    "score": 0.5
+                                },
+                                "score": 0.5
+                            }
+                        ],
+                        [
+                            {
+                                "player1": {
+                                    "last_name": "Ryder",
+                                    "first_name": "Riva",
+                                    "date_of_birth": "1990-14-12",
+                                    "id": "LE65874",
+                                    "score": 0.5
+                                },
+                                "score": 0
+                            },
+                            {
+                                "player2": {
+                                    "last_name": "Lefebvre",
+                                    "first_name": "Camille",
+                                    "date_of_birth": "2000-01-03",
+                                    "id": "TF52376",
+                                    "score": 0.5
+                                },
+                                "score": 1
+                            }
+                        ]
+                    ],
+                    "round_number": 3,
+                    "closed": true,
+                    "end_date": "2023-08-06 23:19"
+                },
+                {
+                    "start_date": "2023-08-06 23:19",
+                    "games": [
+                        [
+                            {
+                                "player1": {
+                                    "last_name": "Olivia",
+                                    "first_name": "Jenki",
+                                    "date_of_birth": "1990-14-04",
+                                    "id": "ZD22348",
+                                    "score": 3
+                                },
+                                "score": 0.5
+                            },
+                            {
+                                "player2": {
+                                    "last_name": "Nguyen",
+                                    "first_name": "Thierry",
+                                    "date_of_birth": "1985-11-11",
+                                    "id": "CT83941",
+                                    "score": 2
+                                },
+                                "score": 0.5
+                            }
+                        ],
+                        [
+                            {
+                                "player1": {
+                                    "last_name": "Martin",
+                                    "first_name": "Sophie",
+                                    "date_of_birth": "1998-02-28",
+                                    "id": "YR34681",
+                                    "score": 1.5
+                                },
+                                "score": 0.5
+                            },
+                            {
+                                "player2": {
+                                    "last_name": "Lefebvre",
+                                    "first_name": "Camille",
+                                    "date_of_birth": "2000-01-03",
+                                    "id": "TF52376",
+                                    "score": 1.5
+                                },
+                                "score": 0.5
+                            }
+                        ],
+                        [
+                            {
+                                "player1": {
+                                    "last_name": "Moreau",
+                                    "first_name": "Luc",
+                                    "date_of_birth": "1984-04-22",
+                                    "id": "KX57234",
+                                    "score": 1.5
+                                },
+                                "score": 0.5
+                            },
+                            {
+                                "player2": {
+                                    "last_name": "Garcia",
+                                    "first_name": "Pablo",
+                                    "date_of_birth": "1987-07-19",
+                                    "id": "DT91027",
+                                    "score": 1.0
+                                },
+                                "score": 0.5
+                            }
+                        ],
+                        [
+                            {
+                                "player1": {
+                                    "last_name": "Dupont",
+                                    "first_name": "Jean",
+                                    "date_of_birth": "1990-05-12",
+                                    "id": "YR27653",
+                                    "score": 1.0
+                                },
+                                "score": 0
+                            },
+                            {
+                                "player2": {
+                                    "last_name": "Ryder",
+                                    "first_name": "Riva",
+                                    "date_of_birth": "1990-14-12",
+                                    "id": "LE65874",
+                                    "score": 0.5
+                                },
+                                "score": 1
+                            }
+                        ]
+                    ],
+                    "round_number": 4,
                     "closed": false
                 }
+            ],
+            "winners": [
+                {
+                    "last_name": "Olivia",
+                    "first_name": "Jenki",
+                    "date_of_birth": "1990-14-04",
+                    "id": "ZD22348",
+                    "score": 3.5
+                }
+            ],
+            "end date": [
+                "2023-08-06 23:19"
             ]
         }
     ]

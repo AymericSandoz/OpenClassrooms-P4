@@ -1,19 +1,17 @@
-
-import subprocess
 import os
 import sys
 import json
-# from views.views import View 
+
 
 def go_back_to_menu_or_exit_programme(user_input):
     if user_input.lower() == "menu":
-        os.system('cls' if os.name == 'nt' else 'clear') 
-        subprocess.call(["python", "main.py"])
+        os.system('cls' if os.name == 'nt' else 'clear')
+        return 'menu'
 
     if user_input.lower() == "exit":
         os.system('cls' if os.name == 'nt' else 'clear')
-        # View.goodbye()
         sys.exit()
+
 
 def search_tournaments_by_player(player_id):
     with open('data/tournaments.json', 'r') as file:

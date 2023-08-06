@@ -13,18 +13,18 @@ class Menu_controller:
             menu_choice = Menu_view.menu()
             if menu_choice == "1":
                 Tournament_controller.launch_tournament()
-                continue
+                # continue
             elif menu_choice == "2":
                 Player_controller.register_player()
-                continue
+                # continue
             elif menu_choice == "3":
                 Tournament_controller.display_tournaments()
                 Tournament_controller.display_tournament()
-                continue
+                # continue
             elif menu_choice == "4":
                 Player_controller.display_players()
                 Player_controller.display_player()
-                continue
+                # continue
             elif menu_choice == "5":
                 os.system('cls')
                 sys.exit()

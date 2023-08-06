@@ -9,7 +9,6 @@ class Player_controller:
         """register player to the federation"""
         player_info = Player_view.register_player()
         player = Player(player_info["first_name"], player_info["last_name"], player_info["date_of_birth"])
-        print(player)
         success_message = player.register_player()
         if success_message == "echec":
             Player_view.id_already_existing(player.id)

@@ -29,7 +29,7 @@ class Tournament:
             data = json.load(f)
 
         for tournament in data["tournaments"]:
-            if tournament["name"] == self.name:
+            if tournament["id"] == self.id:
                 tournament.update({"players": self.players})
                 break
 
@@ -135,12 +135,14 @@ class Tournament:
 
                 else:
                     player_index = player_index + 1
-                    if player_index == len(sorted_players) - 1:
-                        player1 = self.players[0]
-                        player2 = self.players[player_index]
+                    # If a player has played with every other one
+                    if player_index == len(sorted_players):
+                        player1 = self.players[1]
+                        player2 = self.players[0]
                         games.append(Game(player1, player2))
-                        del sorted_players[player_index]
+                        del sorted_players[1]
                         del sorted_players[0]
+                        player_index = 1
         return games
 
     def shuffle_players(self):
